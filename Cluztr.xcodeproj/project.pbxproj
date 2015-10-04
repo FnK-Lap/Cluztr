@@ -13,6 +13,8 @@
 		8C4511061BBE92F9004BDC9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511041BBE92F9004BDC9A /* Main.storyboard */; };
 		8C4511081BBE92F9004BDC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511071BBE92F9004BDC9A /* Assets.xcassets */; };
 		8C45110B1BBE92F9004BDC9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511091BBE92F9004BDC9A /* LaunchScreen.storyboard */; };
+		8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8C5DFE0F1BC1CCD200E5AF07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DFE0E1BC1CCD200E5AF07 /* ViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8C4511071BBE92F9004BDC9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C45110A1BBE92F9004BDC9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C45110C1BBE92F9004BDC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		8C5DFE0E1BC1CCD200E5AF07 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				8C4511071BBE92F9004BDC9A /* Assets.xcassets */,
 				8C4511091BBE92F9004BDC9A /* LaunchScreen.storyboard */,
 				8C45110C1BBE92F9004BDC9A /* Info.plist */,
+				8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */,
+				8C5DFE0E1BC1CCD200E5AF07 /* ViewController.swift */,
 			);
 			path = Cluztr;
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C5DFE0F1BC1CCD200E5AF07 /* ViewController.swift in Sources */,
 				8C4511031BBE92F9004BDC9A /* SecondViewController.swift in Sources */,
+				8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */,
 				8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */,
 				8C4511011BBE92F9004BDC9A /* FirstViewController.swift in Sources */,
 			);
@@ -287,6 +295,7 @@
 				8C4511111BBE92F9004BDC9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
