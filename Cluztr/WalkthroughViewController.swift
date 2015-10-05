@@ -7,15 +7,45 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
-class WalkthroughViewController: UIViewController, UIPageViewControllerDataSource {
+class WalkthroughViewController: UIViewController, UIPageViewControllerDataSource, FBSDKLoginButtonDelegate {
     
     var pageViewController : UIPageViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startWalkthrough()
+        
+        // Check Facebook Login
+        if FBSDKAccessToken.currentAccessToken() == nil {
+            print("Not logged")
+            startWalkthrough()
+        } else {
+            print("Logged in")
+//            
+//            // DEBUG : Logout button
+//            var loginButton = FBSDKLoginButton()
+//            loginButton.readPermissions = ["read_profile", "email"]
+//            loginButton.delegate = self
+//            loginButton.center = self.view.center
+//            
+//            self.view.addSubview(loginButton)
+
+        }
+        
+        
+        
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            print("View Did Appear logged")
+            let startViewController = storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
+            self.presentViewController(startViewController!, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +64,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
         self.addChildViewController(pageViewController)
         self.view.addSubview(pageViewController.view)
+
         self.pageViewController.didMoveToParentViewController(self)
     }
     
@@ -45,8 +76,15 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
             return nil
         }
         
-        pageContentViewController.pageIndex   = index
+        // Create Fb Login Button
+        let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
+        loginButton.readPermissions = ["public_profile", "email"]
         
+        // Pass login button and index to pageViewController
+        pageContentViewController.pageIndex   = index
+        pageContentViewController.loginButton = loginButton
+            
         return pageContentViewController
     }
     
@@ -74,6 +112,26 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         index--
         
         return self.viewControllerAtIndex(index)
+    }
+    
+    // MARK: - Facebook Login
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        
+        if error == nil {
+            // Retour de Facebook
+            print("login complete")
+            
+            // TODO: - Check token with API
+            performSegueWithIdentifier("StartSegue", sender: nil)
+        } else {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        print("User logged out")
+        startWalkthrough()
     }
 
     /*

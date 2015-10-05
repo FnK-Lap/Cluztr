@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class PageContentViewController: UIViewController {
     
@@ -16,6 +18,7 @@ class PageContentViewController: UIViewController {
     @IBOutlet weak var contentLabel: UILabel!
     
     var pageIndex  : Int?
+    var loginButton: FBSDKLoginButton?
     
     let pageTitles = [
         "Invite",
@@ -36,13 +39,17 @@ class PageContentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set dot at current page
         self.pageControlDot.currentPage = pageIndex!
         
+        // Image
         self.bkImageView.image = UIImage(named: self.images[self.pageIndex!])
         
+        // Heading
         self.heading.text  = self.pageTitles[self.pageIndex!]
         self.heading.alpha = 0.1
         
+        // Content
         self.contentLabel.text  = self.pageContents[self.pageIndex!]
         self.contentLabel.alpha = 0.1
         
@@ -50,12 +57,18 @@ class PageContentViewController: UIViewController {
             self.heading.alpha      = 1.0
             self.contentLabel.alpha = 1.0
         })
+        
+        // Add Fb Login Button on bottom
+        self.loginButton!.center = CGPointMake(self.view.frame.width / 2, self.view.frame.height - self.loginButton!.frame.height)
+        self.view.addSubview(self.loginButton!)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+
     
 
     /*

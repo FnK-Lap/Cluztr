@@ -98,10 +98,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="StartSegue" id="oGR-jB-e3z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RK3-JJ-HbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-566" y="-1323"/>
+            <point key="canvasLocation" x="-606" y="-1273"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="euH-zw-igO">
@@ -115,7 +118,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Walkthroughs" translatesAutoresizingMaskIntoConstraints="NO" id="rLY-jP-4dd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Walkthroughs - 01" translatesAutoresizingMaskIntoConstraints="NO" id="rLY-jP-4dd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="396"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invite" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pn-Lu-m52">
@@ -187,7 +190,7 @@ groupe Cluztr.</string>
         <!--Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="TabBarViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Start" id="49e-Tb-3d3" customClass="TabBarViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -205,7 +208,7 @@ groupe Cluztr.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Walkthroughs" width="640" height="732"/>
+        <image name="Walkthroughs - 01" width="640" height="732"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
