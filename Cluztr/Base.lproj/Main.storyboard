@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WgS-JY-36U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dBh-Oh-a63">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -85,23 +85,23 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Pbt-a9-w5Y">
+        <!--Walkthrough View Controller-->
+        <scene sceneID="Gck-fW-w63">
             <objects>
-                <viewController id="WgS-JY-36U" customClass="ViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dBh-Oh-a63" customClass="WalkthroughViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="F3w-Pw-RNp"/>
-                        <viewControllerLayoutGuide type="bottom" id="aFt-0e-Vhi"/>
+                        <viewControllerLayoutGuide type="top" id="6Sc-XK-1io"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ucf-It-Xrh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="m5S-3S-f1M">
+                    <view key="view" contentMode="scaleToFill" id="dcc-aT-b3g">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CFJ-6x-Jgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RK3-JJ-HbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-646" y="-1311"/>
+            <point key="canvasLocation" x="-566" y="-1323"/>
         </scene>
         <!--Page Content View Controller-->
         <scene sceneID="euH-zw-igO">
@@ -184,10 +184,10 @@ groupe Cluztr.</string>
             </objects>
             <point key="canvasLocation" x="88" y="-1784"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="TabBarViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
