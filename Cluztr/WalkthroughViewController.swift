@@ -9,21 +9,50 @@
 import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
+import Alamofire
+import Locksmith
+
 
 class WalkthroughViewController: UIViewController, UIPageViewControllerDataSource, FBSDKLoginButtonDelegate {
     
     var pageViewController : UIPageViewController!
+    var logged: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ACCESS TOKEN in Keychain --------------------------")
+        print(Locksmith.loadDataForUserAccount("access_token"))
         
         // Check Facebook Login
         if FBSDKAccessToken.currentAccessToken() == nil {
-            print("Not logged")
+            print("----- Not logged : (FB + API)")
             startWalkthrough()
         } else {
-            print("Logged in")
-//            
+            print("----- Logged FB, Not logged API")
+            Alamofire.request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]))
+                .responseJSON { response in
+                    if let data = response.result.value {
+                        let json = JSON(data)
+
+                        // User Login
+                        if (json["status"] == 200) {
+                            print("-- User exist, log in")
+                            UserModel().loginUser(json["token"])
+                        } else if (json["status"] == 201) {
+                            // User Create
+                            // TODO: - User create
+                            print("-- User create, log in")
+                            UserModel().loginUser(json["token"])
+                        }
+                        
+                    } else {
+                        print("Error HTTP Request")
+                    }
+            }
+
+            print("----- Logged in (FB + API)")
+            self.logged = true
+//
 //            // DEBUG : Logout button
 //            var loginButton = FBSDKLoginButton()
 //            loginButton.readPermissions = ["read_profile", "email"]
@@ -41,7 +70,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
     }
     
     override func viewDidAppear(animated: Bool) {
-        if FBSDKAccessToken.currentAccessToken() != nil {
+        if self.logged {
             print("View Did Appear logged")
             let startViewController = storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
             self.presentViewController(startViewController!, animated: true, completion: nil)
@@ -79,7 +108,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         // Create Fb Login Button
         let loginButton = FBSDKLoginButton()
         loginButton.delegate = self
-        loginButton.readPermissions = ["public_profile", "email"]
+        loginButton.readPermissions = ["public_profile", "email", "user_birthday"]
         
         // Pass login button and index to pageViewController
         pageContentViewController.pageIndex   = index
@@ -120,9 +149,31 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         
         if error == nil {
             // Retour de Facebook
-            print("login complete")
+            print("----- Logged FB, Not logged API")
+            Alamofire.request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]))
+                .responseJSON { response in
+                    if let data = response.result.value {
+                        let json = JSON(data)
+                        
+                        // User Login
+                        if (json["status"] == 200) {
+                            print("-- User exist, log in")
+                            UserModel().loginUser(json["token"])
+                        } else if (json["status"] == 201) {
+                            // User Create
+                            // TODO: - User create
+                            print("-- User create, log in")
+                            UserModel().loginUser(json["token"])
+                        }
+                        
+                    } else {
+                        print("Error HTTP Request")
+                    }
+            }
             
-            // TODO: - Check token with API
+            print("----- Logged in (FB + API)")
+            self.logged = true
+            
             performSegueWithIdentifier("StartSegue", sender: nil)
         } else {
             print(error.localizedDescription)
@@ -130,7 +181,17 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("User logged out")
+        print("----- User logged out")
+        self.logged = false
+        
+        if let _ = Locksmith.loadDataForUserAccount("access_token") {
+            do {
+                try Locksmith.deleteDataForUserAccount("access_token")
+            } catch _ {
+                print("Error delete access token from keychain")
+            }
+        }
+        
         startWalkthrough()
     }
 

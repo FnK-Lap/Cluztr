@@ -58,7 +58,7 @@ class PageContentViewController: UIViewController {
             self.contentLabel.alpha = 1.0
         })
         
-        // Add Fb Login Button on bottom
+        // Add Fb Login Button on bottom view
         self.loginButton!.center = CGPointMake(self.view.frame.width / 2, self.view.frame.height - self.loginButton!.frame.height)
         self.view.addSubview(self.loginButton!)
     }
