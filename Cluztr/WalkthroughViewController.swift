@@ -20,8 +20,9 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ACCESS TOKEN in Keychain --------------------------")
+        print("--------------- ACCESS TOKEN in Keychain ----------------")
         print(Locksmith.loadDataForUserAccount("access_token"))
+        print("------------- FIN ACCESS TOKEN in Keychain --------------")
         
         // Check Facebook Login
         if FBSDKAccessToken.currentAccessToken() == nil {
@@ -46,6 +47,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
                         }
                         
                     } else {
+                        
                         print("Error HTTP Request")
                     }
             }

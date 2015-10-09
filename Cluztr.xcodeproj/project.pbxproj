@@ -18,6 +18,8 @@
 		8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8C89407E1BC2A891009783AB /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C89407D1BC2A891009783AB /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
 		8C8940801BC2A8A9009783AB /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C89407F1BC2A8A9009783AB /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
+		8C96425A1BC4D342001982D3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9642591BC4D342001982D3 /* NotificationViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8C9642601BC4D3B9001982D3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96425F1BC4D3B9001982D3 /* ChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8C98A5B11BC4266C00F621E0 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98A5B01BC4266C00F621E0 /* UserRouter.swift */; settings = {ASSET_TAGS = (); }; };
 		8C98A5C51BC437B300F621E0 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C98A5BC1BC437A300F621E0 /* Locksmith.framework */; };
 		8C98A5C61BC437B300F621E0 /* Locksmith.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C98A5BC1BC437A300F621E0 /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -98,6 +100,8 @@
 		8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		8C89407D1BC2A891009783AB /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20150910/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		8C89407F1BC2A8A9009783AB /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20150910/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		8C9642591BC4D342001982D3 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		8C96425F1BC4D3B9001982D3 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8C98A5B01BC4266C00F621E0 /* UserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		8C98A5B31BC437A300F621E0 /* Locksmith.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Locksmith.xcodeproj; path = "../../../Downloads/Locksmith-master/Locksmith.xcodeproj"; sourceTree = "<group>"; };
 		8C98A5CB1BC438ED00F621E0 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */,
 				8C8940781BC295F8009783AB /* TabBarViewController.swift */,
 				8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */,
+				8C9642591BC4D342001982D3 /* NotificationViewController.swift */,
+				8C96425F1BC4D3B9001982D3 /* ChatViewController.swift */,
 			);
 			path = Cluztr;
 			sourceTree = "<group>";
@@ -309,7 +315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C96425A1BC4D342001982D3 /* NotificationViewController.swift in Sources */,
 				8C4511031BBE92F9004BDC9A /* SecondViewController.swift in Sources */,
+				8C9642601BC4D3B9001982D3 /* ChatViewController.swift in Sources */,
 				8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */,
 				8C98A5CC1BC438ED00F621E0 /* UserModel.swift in Sources */,
 				8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */,
