@@ -34,21 +34,3 @@ class HttpHelper: UIViewController {
         }
     }
 }
-
-
-//        self.responseData = nil
-//        self.status = nil
-//        self.message = nil
-//        self.errors = nil
-//
-//        Alamofire.request(request).responseJSON { response in
-//            if let data = response.result.value {
-//                let json = JSON(data)
-//
-//                self.status       = json["status"].int
-//                self.responseData = json
-//                self.message      = json["message"].string
-//            } else {
-//                self.errors = "Error HTTP request"
-//            }
-//        }
