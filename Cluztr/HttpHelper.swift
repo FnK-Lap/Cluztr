@@ -30,6 +30,7 @@ class HttpHelper: UIViewController {
                 alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
                 
                 controller.presentViewController(alertController, animated: true, completion: nil)
+                errors(nil)
             }
         }
     }

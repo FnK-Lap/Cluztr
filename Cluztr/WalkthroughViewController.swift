@@ -17,6 +17,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
     
     var pageViewController : UIPageViewController!
     var logged: Bool = false
+    let user: JSON? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,16 +44,19 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
                         UserModel().loginUser(json["token"])
                     }
                     self.logged = true
+                    let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
+                    self.presentViewController(startViewController!, animated: true, completion: nil)
                 },
                 errors: {_ in
                     print("else")
+                    if self.logged == false {
+                        FBSDKLoginManager().logOut()
+                        self.startWalkthrough()
+                    }
                 }
             )
             
-            if self.logged == false {
-                FBSDKLoginManager().logOut()
-                startWalkthrough()
-            }
+            
         }
         
         
@@ -62,11 +66,11 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
     }
     
     override func viewDidAppear(animated: Bool) {
-        if self.logged {
-            print("View Did Appear logged")
-            let startViewController = storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
-            self.presentViewController(startViewController!, animated: true, completion: nil)
-        }
+//        if self.logged {
+//            print("View Did Appear logged")
+//            let startViewController = storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
+//            self.presentViewController(startViewController!, animated: true, completion: nil)
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -160,13 +164,12 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
                 },
                 errors: {_ in
                     print("else")
+                    if self.logged == false {
+                        FBSDKLoginManager().logOut()
+                        self.startWalkthrough()
+                    }
                 }
             )
-            
-            if self.logged == false {
-                FBSDKLoginManager().logOut()
-                startWalkthrough()
-            }
             
         } else {
             print(error.localizedDescription)
