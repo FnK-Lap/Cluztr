@@ -30,39 +30,29 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
             startWalkthrough()
         } else {
             print("----- Logged FB, Not logged API")
-            Alamofire.request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]))
-                .responseJSON { response in
-                    if let data = response.result.value {
-                        let json = JSON(data)
-
-                        // User Login
-                        if (json["status"] == 200) {
-                            print("-- User exist, log in")
-                            UserModel().loginUser(json["token"])
-                        } else if (json["status"] == 201) {
-                            // User Create
-                            // TODO: - User create
-                            print("-- User create, log in")
-                            UserModel().loginUser(json["token"])
-                        }
-                        
-                    } else {
-                        
-                        print("Error HTTP Request")
+            
+            HttpHelper().request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]), fromController: self,
+                success: {json in
+                    // User Login
+                    if (json["status"] == 200) {
+                        print("-- User exist, log in")
+                        UserModel().loginUser(json["token"])
+                    } else if (json["status"] == 201) {
+                        // User Create
+                        print("-- User create, log in")
+                        UserModel().loginUser(json["token"])
                     }
+                    self.logged = true
+                },
+                errors: {_ in
+                    print("else")
+                }
+            )
+            
+            if self.logged == false {
+                FBSDKLoginManager().logOut()
+                startWalkthrough()
             }
-
-            print("----- Logged in (FB + API)")
-            self.logged = true
-//
-//            // DEBUG : Logout button
-//            var loginButton = FBSDKLoginButton()
-//            loginButton.readPermissions = ["read_profile", "email"]
-//            loginButton.delegate = self
-//            loginButton.center = self.view.center
-//            
-//            self.view.addSubview(loginButton)
-
         }
         
         
@@ -152,31 +142,32 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         if error == nil {
             // Retour de Facebook
             print("----- Logged FB, Not logged API")
-            Alamofire.request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]))
-                .responseJSON { response in
-                    if let data = response.result.value {
-                        let json = JSON(data)
-                        
-                        // User Login
-                        if (json["status"] == 200) {
-                            print("-- User exist, log in")
-                            UserModel().loginUser(json["token"])
-                        } else if (json["status"] == 201) {
-                            // User Create
-                            // TODO: - User create
-                            print("-- User create, log in")
-                            UserModel().loginUser(json["token"])
-                        }
-                        
-                    } else {
-                        print("Error HTTP Request")
+            
+            HttpHelper().request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]), fromController: self,
+                success: {json in
+                    // User Login
+                    if (json["status"] == 200) {
+                        print("-- User exist, log in")
+                        UserModel().loginUser(json["token"])
+                    } else if (json["status"] == 201) {
+                        // User Create
+                        print("-- User create, log in")
+                        UserModel().loginUser(json["token"])
                     }
+                    print("----- Logged in (FB + API)")
+                    self.logged = true
+                    self.performSegueWithIdentifier("StartSegue", sender: nil)
+                },
+                errors: {_ in
+                    print("else")
+                }
+            )
+            
+            if self.logged == false {
+                FBSDKLoginManager().logOut()
+                startWalkthrough()
             }
             
-            print("----- Logged in (FB + API)")
-            self.logged = true
-            
-            performSegueWithIdentifier("StartSegue", sender: nil)
         } else {
             print(error.localizedDescription)
         }
