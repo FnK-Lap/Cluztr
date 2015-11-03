@@ -9,7 +9,7 @@
         <!--Mon groupe-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupTab" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -258,7 +258,7 @@ groupe Cluztr.</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="createGroupButton:" destination="8Ud-cE-yHa" eventType="touchUpInside" id="5AZ-Z6-QVM"/>
+                                    <action selector="createGroupButton:" destination="8Ud-cE-yHa" eventType="touchUpInside" id="G9H-NS-fcW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm2-KF-eQc">

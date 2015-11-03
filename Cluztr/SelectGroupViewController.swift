@@ -41,9 +41,17 @@ class SelectGroupViewController: UIViewController {
             fromController: self,
             success: { json in
                print("success \(json)")
+                if json["status"] == 201 {
+                    let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
+                    self.presentViewController(startViewController!, animated: true, completion: nil)
+                }
             },
             errors: { json in
                 print("errors \(json)")
+                let alertController = UIAlertController(title: "Erreur", message: "Une erreur est survenue", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
             })
     }
 
