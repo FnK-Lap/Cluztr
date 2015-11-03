@@ -63,6 +63,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
                 
                 self.logged = true
                 self.user = json["user"]
+                UserRouter.userEmail = self.user!["email"]
                 if self.user!["groupId"] != nil {
                     self.performSegueWithIdentifier("StartSegue", sender: nil)
                 } else {
