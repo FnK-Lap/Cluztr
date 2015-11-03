@@ -217,12 +217,12 @@ groupe Cluztr.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6L-sL-LGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100" y="-2020"/>
+            <point key="canvasLocation" x="152" y="-2020"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Group View Controller-->
         <scene sceneID="ceB-Fp-Dci">
             <objects>
-                <viewController id="8Ud-cE-yHa" sceneMemberID="viewController">
+                <viewController id="8Ud-cE-yHa" customClass="SelectGroupViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vAx-Y9-RwE"/>
                         <viewControllerLayoutGuide type="bottom" id="0Cv-Wv-mpE"/>
@@ -231,14 +231,17 @@ groupe Cluztr.</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysK-Kx-SfV">
-                                <rect key="frame" x="250" y="289" width="100" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="selectGroup" translatesAutoresizingMaskIntoConstraints="NO" id="mtY-nC-tcs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="mtY-nC-tcs" secondAttribute="bottom" id="2Jv-W3-Sfx"/>
+                            <constraint firstItem="mtY-nC-tcs" firstAttribute="leading" secondItem="ETP-2f-e1e" secondAttribute="leading" id="Noe-3F-vQF"/>
+                            <constraint firstAttribute="trailing" secondItem="mtY-nC-tcs" secondAttribute="trailing" id="R0R-fC-KhJ"/>
+                            <constraint firstItem="mtY-nC-tcs" firstAttribute="top" secondItem="ETP-2f-e1e" secondAttribute="top" id="k5f-di-qsZ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPR-Te-Riy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -280,5 +283,6 @@ groupe Cluztr.</string>
         <image name="NotificationIcon" width="25" height="25"/>
         <image name="ProfilIcon" width="25" height="25"/>
         <image name="Walkthroughs - 01" width="640" height="732"/>
+        <image name="selectGroup" width="640" height="1136"/>
     </resources>
 </document>
