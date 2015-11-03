@@ -36,6 +36,16 @@ class SelectGroupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func createGroupButton(sender: AnyObject) {
+        HttpHelper().request(GroupRouter.CreateGroup(),
+            fromController: self,
+            success: { json in
+               print("success \(json)")
+            },
+            errors: { json in
+                print("errors \(json)")
+            })
+    }
 
     /*
     // MARK: - Navigation

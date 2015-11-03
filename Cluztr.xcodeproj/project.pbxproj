@@ -21,6 +21,7 @@
 		8C9642601BC4D3B9001982D3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96425F1BC4D3B9001982D3 /* ChatViewController.swift */; };
 		8C98A5B11BC4266C00F621E0 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98A5B01BC4266C00F621E0 /* UserRouter.swift */; };
 		8C98A5CC1BC438ED00F621E0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98A5CB1BC438ED00F621E0 /* UserModel.swift */; };
+		F11DDC001BE916EC008F88B4 /* GroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11DDBFF1BE916EC008F88B4 /* GroupRouter.swift */; };
 		F174E9621BD0FF6000D15FDC /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174E9611BD0FF6000D15FDC /* HttpHelper.swift */; };
 		F1B59E301BC7BB3000BD76C8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E2E1BC7BB3000BD76C8 /* FBSDKCoreKit.framework */; };
 		F1B59E311BC7BB3000BD76C8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E2F1BC7BB3000BD76C8 /* FBSDKLoginKit.framework */; };
@@ -150,6 +151,7 @@
 		8C96425F1BC4D3B9001982D3 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8C98A5B01BC4266C00F621E0 /* UserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		8C98A5CB1BC438ED00F621E0 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		F11DDBFF1BE916EC008F88B4 /* GroupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupRouter.swift; sourceTree = "<group>"; };
 		F174E9611BD0FF6000D15FDC /* HttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpHelper.swift; sourceTree = "<group>"; };
 		F1B59E2E1BC7BB3000BD76C8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20151007/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		F1B59E2F1BC7BB3000BD76C8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20151007/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				8C98A5B01BC4266C00F621E0 /* UserRouter.swift */,
+				F11DDBFF1BE916EC008F88B4 /* GroupRouter.swift */,
 			);
 			name = Routers;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */,
 				8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */,
 				8C98A5B11BC4266C00F621E0 /* UserRouter.swift in Sources */,
+				F11DDC001BE916EC008F88B4 /* GroupRouter.swift in Sources */,
 				8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */,
 				8C4511011BBE92F9004BDC9A /* FirstViewController.swift in Sources */,
 				F174E9621BD0FF6000D15FDC /* HttpHelper.swift in Sources */,

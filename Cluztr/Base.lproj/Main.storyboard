@@ -257,6 +257,9 @@ groupe Cluztr.</string>
                                 <state key="normal" title="Créer votre groupe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createGroupButton:" destination="8Ud-cE-yHa" eventType="touchUpInside" id="5AZ-Z6-QVM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm2-KF-eQc">
                                 <rect key="frame" x="191" y="486" width="219" height="34"/>
