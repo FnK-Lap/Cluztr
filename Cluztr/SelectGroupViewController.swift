@@ -10,10 +10,25 @@ import UIKit
 
 class SelectGroupViewController: UIViewController {
     
+    @IBOutlet weak var createGroupButton: UIButton!
+    
+    @IBOutlet weak var joinGroupButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.initUI()
         // Do any additional setup after loading the view.
+    }
+    
+    func initUI() {
+        // Add border to button
+        self.createGroupButton.layer.cornerRadius = 4;
+        self.createGroupButton.layer.borderWidth = 1;
+        self.createGroupButton.layer.borderColor = UIColor.whiteColor().CGColor
+        
+        self.joinGroupButton.layer.cornerRadius = 4;
+        self.joinGroupButton.layer.borderWidth = 1;
+        self.joinGroupButton.layer.borderColor = UIColor.whiteColor().CGColor
     }
 
     override func didReceiveMemoryWarning() {

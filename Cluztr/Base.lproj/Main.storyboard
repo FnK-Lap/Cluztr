@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dBh-Oh-a63">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -234,15 +235,63 @@ groupe Cluztr.</string>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="selectGroup" translatesAutoresizingMaskIntoConstraints="NO" id="mtY-nC-tcs">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créez le groupe qui vous correspond" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKH-5P-XXF">
+                                <rect key="frame" x="20" y="100" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rejoignez le groupe de vos amis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUT-p3-5dU">
+                                <rect key="frame" x="20" y="385" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gR-QD-X13">
+                                <rect key="frame" x="191" y="201" width="219" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="GJ0-o3-iTY"/>
+                                    <constraint firstAttribute="width" constant="219" id="Ido-Hp-LcO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Créer votre groupe">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zm2-KF-eQc">
+                                <rect key="frame" x="191" y="486" width="219" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="219" id="6lf-Kq-Kq7"/>
+                                    <constraint firstAttribute="height" constant="34" id="ZYa-C7-bqa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Rejoindre un groupe">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zm2-KF-eQc" firstAttribute="top" secondItem="DUT-p3-5dU" secondAttribute="bottom" constant="80" id="0Df-j9-UZT"/>
                             <constraint firstAttribute="bottom" secondItem="mtY-nC-tcs" secondAttribute="bottom" id="2Jv-W3-Sfx"/>
+                            <constraint firstItem="DUT-p3-5dU" firstAttribute="leading" secondItem="ETP-2f-e1e" secondAttribute="leadingMargin" id="JWu-tt-Pkt"/>
+                            <constraint firstItem="9gR-QD-X13" firstAttribute="top" secondItem="UKH-5P-XXF" secondAttribute="bottom" constant="80" id="KNT-zn-A34"/>
                             <constraint firstItem="mtY-nC-tcs" firstAttribute="leading" secondItem="ETP-2f-e1e" secondAttribute="leading" id="Noe-3F-vQF"/>
                             <constraint firstAttribute="trailing" secondItem="mtY-nC-tcs" secondAttribute="trailing" id="R0R-fC-KhJ"/>
+                            <constraint firstItem="UKH-5P-XXF" firstAttribute="leading" secondItem="ETP-2f-e1e" secondAttribute="leadingMargin" id="R8s-JS-gbK"/>
+                            <constraint firstItem="DUT-p3-5dU" firstAttribute="trailing" secondItem="ETP-2f-e1e" secondAttribute="trailingMargin" id="ggL-eZ-oM0"/>
                             <constraint firstItem="mtY-nC-tcs" firstAttribute="top" secondItem="ETP-2f-e1e" secondAttribute="top" id="k5f-di-qsZ"/>
+                            <constraint firstItem="UKH-5P-XXF" firstAttribute="trailing" secondItem="ETP-2f-e1e" secondAttribute="trailingMargin" id="k8P-NH-4Ha"/>
+                            <constraint firstItem="9gR-QD-X13" firstAttribute="centerX" secondItem="ETP-2f-e1e" secondAttribute="centerX" id="mMK-ec-D2h"/>
+                            <constraint firstItem="0Cv-Wv-mpE" firstAttribute="top" secondItem="zm2-KF-eQc" secondAttribute="bottom" constant="80" id="nHz-wa-zE4"/>
+                            <constraint firstItem="UKH-5P-XXF" firstAttribute="top" secondItem="vAx-Y9-RwE" secondAttribute="bottom" constant="80" id="qrr-CO-qzG"/>
+                            <constraint firstItem="zm2-KF-eQc" firstAttribute="centerX" secondItem="ETP-2f-e1e" secondAttribute="centerX" id="tBB-O5-ygI"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="createGroupButton" destination="9gR-QD-X13" id="dRB-DJ-w95"/>
+                        <outlet property="joinGroupButton" destination="zm2-KF-eQc" id="Y94-AW-y5v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPR-Te-Riy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

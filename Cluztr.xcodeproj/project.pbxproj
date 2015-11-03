@@ -571,6 +571,7 @@
 					"/Users/Stick/Downloads/**",
 				);
 				INFOPLIST_FILE = Cluztr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cluztr.Cluztr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -587,6 +588,7 @@
 					"/Users/Stick/Downloads/**",
 				);
 				INFOPLIST_FILE = Cluztr/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cluztr.Cluztr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
