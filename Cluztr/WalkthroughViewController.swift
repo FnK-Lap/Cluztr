@@ -17,7 +17,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
     
     var pageViewController : UIPageViewController!
     var logged: Bool = false
-    let user: JSON? = nil
+    var user: JSON?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,30 +32,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         } else {
             print("----- Logged FB, Not logged API")
             
-            HttpHelper().request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]), fromController: self,
-                success: {json in
-                    // User Login
-                    if (json["status"] == 200) {
-                        print("-- User exist, log in")
-                        UserModel().loginUser(json["token"])
-                    } else if (json["status"] == 201) {
-                        // User Create
-                        print("-- User create, log in")
-                        UserModel().loginUser(json["token"])
-                    }
-                    self.logged = true
-                    let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
-                    self.presentViewController(startViewController!, animated: true, completion: nil)
-                },
-                errors: {_ in
-                    print("else")
-                    if self.logged == false {
-                        FBSDKLoginManager().logOut()
-                        self.startWalkthrough()
-                    }
-                }
-            )
-            
+            self.loginAPI()
             
         }
         
@@ -64,18 +41,42 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         
         // Do any additional setup after loading the view.
     }
-    
-    override func viewDidAppear(animated: Bool) {
-//        if self.logged {
-//            print("View Did Appear logged")
-//            let startViewController = storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
-//            self.presentViewController(startViewController!, animated: true, completion: nil)
-//        }
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loginAPI() {
+        HttpHelper().request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]), fromController: self,
+            success: {json in
+                // User Login
+                if (json["status"] == 200) {
+                    print("-- User exist, log in")
+                    UserModel().loginUser(json["token"])
+                } else if (json["status"] == 201) {
+                    // User Create
+                    print("-- User create, log in")
+                    UserModel().loginUser(json["token"])
+                }
+                
+                self.logged = true
+                self.user = json["user"]
+                if self.user!["groupId"] != nil {
+                    self.performSegueWithIdentifier("StartSegue", sender: nil)
+                } else {
+                    self.performSegueWithIdentifier("SelectGroupSegue", sender: nil)
+                }
+            },
+            errors: {_ in
+                print("else")
+                if self.logged == false {
+                    FBSDKLoginManager().logOut()
+                    self.startWalkthrough()
+                }
+            }
+        )
     }
     
     func startWalkthrough() {
@@ -146,30 +147,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         if error == nil {
             // Retour de Facebook
             print("----- Logged FB, Not logged API")
-            
-            HttpHelper().request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]), fromController: self,
-                success: {json in
-                    // User Login
-                    if (json["status"] == 200) {
-                        print("-- User exist, log in")
-                        UserModel().loginUser(json["token"])
-                    } else if (json["status"] == 201) {
-                        // User Create
-                        print("-- User create, log in")
-                        UserModel().loginUser(json["token"])
-                    }
-                    print("----- Logged in (FB + API)")
-                    self.logged = true
-                    self.performSegueWithIdentifier("StartSegue", sender: nil)
-                },
-                errors: {_ in
-                    print("else")
-                    if self.logged == false {
-                        FBSDKLoginManager().logOut()
-                        self.startWalkthrough()
-                    }
-                }
-            )
+            self.loginAPI()
             
         } else {
             print(error.localizedDescription)
@@ -191,14 +169,17 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         startWalkthrough()
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "StartSegue" {
+            let destinationVC = segue.destinationViewController as! TabBarViewController
+            destinationVC.user = self.user
+        }
     }
-    */
 
 }

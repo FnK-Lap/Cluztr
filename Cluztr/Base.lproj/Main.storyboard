@@ -139,6 +139,7 @@
                     </view>
                     <connections>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="StartSegue" id="oGR-jB-e3z"/>
+                        <segue destination="8Ud-cE-yHa" kind="show" identifier="SelectGroupSegue" id="8PI-S4-o9h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RK3-JJ-HbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,7 +217,33 @@ groupe Cluztr.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r6L-sL-LGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="-949"/>
+            <point key="canvasLocation" x="100" y="-2020"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ceB-Fp-Dci">
+            <objects>
+                <viewController id="8Ud-cE-yHa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vAx-Y9-RwE"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Cv-Wv-mpE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ETP-2f-e1e">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysK-Kx-SfV">
+                                <rect key="frame" x="250" y="289" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sPR-Te-Riy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152" y="-1269"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="zPz-hi-F2l">
@@ -224,7 +251,7 @@ groupe Cluztr.</string>
                 <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="hhF-sd-fgw" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iST-uq-AbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="88" y="-1784"/>
+            <point key="canvasLocation" x="-606" y="-2020"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="yl2-sM-qoP">

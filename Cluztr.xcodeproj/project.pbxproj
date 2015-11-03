@@ -13,19 +13,20 @@
 		8C4511061BBE92F9004BDC9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511041BBE92F9004BDC9A /* Main.storyboard */; };
 		8C4511081BBE92F9004BDC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511071BBE92F9004BDC9A /* Assets.xcassets */; };
 		8C45110B1BBE92F9004BDC9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511091BBE92F9004BDC9A /* LaunchScreen.storyboard */; };
-		8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8940781BC295F8009783AB /* TabBarViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8C96425A1BC4D342001982D3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9642591BC4D342001982D3 /* NotificationViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8C9642601BC4D3B9001982D3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96425F1BC4D3B9001982D3 /* ChatViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8C98A5B11BC4266C00F621E0 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98A5B01BC4266C00F621E0 /* UserRouter.swift */; settings = {ASSET_TAGS = (); }; };
-		8C98A5CC1BC438ED00F621E0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98A5CB1BC438ED00F621E0 /* UserModel.swift */; settings = {ASSET_TAGS = (); }; };
-		F174E9621BD0FF6000D15FDC /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174E9611BD0FF6000D15FDC /* HttpHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		F1B59E301BC7BB3000BD76C8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E2E1BC7BB3000BD76C8 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
-		F1B59E311BC7BB3000BD76C8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E2F1BC7BB3000BD76C8 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
+		8C4ED9631BE835D9008962A1 /* SelectGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4ED9621BE835D9008962A1 /* SelectGroupViewController.swift */; };
+		8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */; };
+		8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8940781BC295F8009783AB /* TabBarViewController.swift */; };
+		8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */; };
+		8C96425A1BC4D342001982D3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9642591BC4D342001982D3 /* NotificationViewController.swift */; };
+		8C9642601BC4D3B9001982D3 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C96425F1BC4D3B9001982D3 /* ChatViewController.swift */; };
+		8C98A5B11BC4266C00F621E0 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98A5B01BC4266C00F621E0 /* UserRouter.swift */; };
+		8C98A5CC1BC438ED00F621E0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98A5CB1BC438ED00F621E0 /* UserModel.swift */; };
+		F174E9621BD0FF6000D15FDC /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174E9611BD0FF6000D15FDC /* HttpHelper.swift */; };
+		F1B59E301BC7BB3000BD76C8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E2E1BC7BB3000BD76C8 /* FBSDKCoreKit.framework */; };
+		F1B59E311BC7BB3000BD76C8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E2F1BC7BB3000BD76C8 /* FBSDKLoginKit.framework */; };
 		F1B59E561BC7BBEB00BD76C8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E4D1BC7BBC300BD76C8 /* Alamofire.framework */; };
 		F1B59E571BC7BBEB00BD76C8 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E4D1BC7BBC300BD76C8 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F1B59E5B1BC7BC0A00BD76C8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B59E5A1BC7BC0A00BD76C8 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
+		F1B59E5B1BC7BC0A00BD76C8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B59E5A1BC7BC0A00BD76C8 /* SwiftyJSON.swift */; };
 		F1B59E6E1BC7BC2100BD76C8 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E651BC7BC1A00BD76C8 /* Locksmith.framework */; };
 		F1B59E6F1BC7BC2100BD76C8 /* Locksmith.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E651BC7BC1A00BD76C8 /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -141,6 +142,7 @@
 		8C4511071BBE92F9004BDC9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C45110A1BBE92F9004BDC9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C45110C1BBE92F9004BDC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C4ED9621BE835D9008962A1 /* SelectGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGroupViewController.swift; sourceTree = "<group>"; };
 		8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		8C8940781BC295F8009783AB /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */,
 				8C9642591BC4D342001982D3 /* NotificationViewController.swift */,
 				8C96425F1BC4D3B9001982D3 /* ChatViewController.swift */,
+				8C4ED9621BE835D9008962A1 /* SelectGroupViewController.swift */,
 			);
 			path = Cluztr;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				8C9642601BC4D3B9001982D3 /* ChatViewController.swift in Sources */,
 				F1B59E5B1BC7BC0A00BD76C8 /* SwiftyJSON.swift in Sources */,
 				8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */,
+				8C4ED9631BE835D9008962A1 /* SelectGroupViewController.swift in Sources */,
 				8C98A5CC1BC438ED00F621E0 /* UserModel.swift in Sources */,
 				8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */,
 				8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */,

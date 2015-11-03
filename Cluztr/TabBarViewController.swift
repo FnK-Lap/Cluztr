@@ -10,7 +10,7 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
-    
+    var user: JSON?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,7 @@ class TabBarViewController: UITabBarController {
         // remove default border
         tabBar.frame.size.width = self.view.frame.width + 4
         tabBar.frame.origin.x = -2
+        print(self.user)
         
         // Do any additional setup after loading the view.
     }
