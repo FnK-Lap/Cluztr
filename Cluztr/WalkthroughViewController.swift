@@ -54,16 +54,14 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
                 // User Login
                 if (json["status"] == 200) {
                     print("-- User exist, log in")
-                    UserModel().loginUser(json["token"])
                 } else if (json["status"] == 201) {
                     // User Create
                     print("-- User create, log in")
-                    UserModel().loginUser(json["token"])
                 }
                 
                 self.logged = true
                 self.user = json["user"]
-                UserRouter.userEmail = self.user!["email"]
+                UserModel().loginUser(json["token"], email: self.user!["email"])
                 if self.user!["groupId"] != nil {
                     self.performSegueWithIdentifier("StartSegue", sender: nil)
                 } else {

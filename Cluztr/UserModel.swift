@@ -11,10 +11,11 @@ import Locksmith
 
 class UserModel {
     
-    func loginUser(token: JSON) -> Void {
+    func loginUser(token: JSON, email: JSON) -> Void {
         do {
             let tokenStr = token["token"]
             try Locksmith.updateData(["access_token": "\(tokenStr)"], forUserAccount: "access_token")
+            try Locksmith.updateData(["email": "\(email)"], forUserAccount: "email")
         } catch _ {
             print("Error on save access token in keychain")
         }

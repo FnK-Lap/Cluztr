@@ -12,7 +12,6 @@ import Locksmith
 
 enum UserRouter: URLRequestConvertible {
     static let baseURLString = "http://localhost:3000"
-    static var userEmail: JSON? = nil
     
     case LoginUser([String: AnyObject])
     
@@ -42,9 +41,9 @@ enum UserRouter: URLRequestConvertible {
         case .LoginUser(let parameters):
             return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
         default:
-            if let token = Locksmith.loadDataForUserAccount("access_token") {
+            if let token = Locksmith.loadDataForUserAccount("access_token"), let email = Locksmith.loadDataForUserAccount("email") {
                 mutableURLRequest.addValue("\(token)", forHTTPHeaderField: "x-access-token")
-                mutableURLRequest.addValue("\(UserRouter.userEmail)", forHTTPHeaderField: "x-key")
+                mutableURLRequest.addValue("\(email)", forHTTPHeaderField: "x-key")
             }
             return mutableURLRequest
         }
