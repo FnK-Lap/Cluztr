@@ -20,6 +20,10 @@ class SelectGroupViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false);
+    }
+    
     func initUI() {
         // Add border to button
         self.createGroupButton.layer.cornerRadius = 4;

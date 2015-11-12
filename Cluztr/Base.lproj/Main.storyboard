@@ -67,8 +67,6 @@
                     <tabBarItem key="tabBarItem" title="Mon groupe" image="GroupIcon" selectedImage="GroupIcon" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="firstMemberImage" destination="ebA-w7-Ppm" id="mrN-Fx-Gf0"/>
-                        <outlet property="secondMemberImage" destination="BtW-F2-5z9" id="ht1-lq-2B4"/>
-                        <outlet property="thirdMemberImage" destination="Luh-ge-8DA" id="qgI-xV-zoY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -169,7 +167,7 @@
                     </view>
                     <connections>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="StartSegue" id="oGR-jB-e3z"/>
-                        <segue destination="8Ud-cE-yHa" kind="show" identifier="SelectGroupSegue" id="8PI-S4-o9h"/>
+                        <segue destination="aWz-rf-jc4" kind="show" identifier="SelectGroupSegue" id="8PI-S4-o9h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RK3-JJ-HbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -264,7 +262,7 @@ groupe Cluztr.</string>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="selectGroup" translatesAutoresizingMaskIntoConstraints="NO" id="mtY-nC-tcs">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créez le groupe qui vous correspond" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKH-5P-XXF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Créez le groupe qui vous correspond" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKH-5P-XXF">
                                 <rect key="frame" x="20" y="100" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -276,7 +274,7 @@ groupe Cluztr.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gR-QD-X13">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gR-QD-X13">
                                 <rect key="frame" x="191" y="201" width="219" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="GJ0-o3-iTY"/>
@@ -300,6 +298,9 @@ groupe Cluztr.</string>
                                 <state key="normal" title="Rejoindre un groupe">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="UeZ-Ql-76s" kind="show" id="oH5-DO-zam"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -320,6 +321,7 @@ groupe Cluztr.</string>
                             <constraint firstItem="zm2-KF-eQc" firstAttribute="centerX" secondItem="ETP-2f-e1e" secondAttribute="centerX" id="tBB-O5-ygI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gDy-O5-HwF"/>
                     <connections>
                         <outlet property="createGroupButton" destination="9gR-QD-X13" id="dRB-DJ-w95"/>
                         <outlet property="joinGroupButton" destination="zm2-KF-eQc" id="Y94-AW-y5v"/>
@@ -327,7 +329,35 @@ groupe Cluztr.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPR-Te-Riy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152" y="-1269"/>
+            <point key="canvasLocation" x="964" y="-1269"/>
+        </scene>
+        <!--Join Group Table View Controller-->
+        <scene sceneID="cyb-qw-XLz">
+            <objects>
+                <tableViewController id="UeZ-Ql-76s" customClass="JoinGroupTableViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QaO-is-ntj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ebW-F3-USN" customClass="JoinGroupTableViewCell" customModule="Cluztr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebW-F3-USN" id="GeR-y2-7vW">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UeZ-Ql-76s" id="3Gy-R2-E0s"/>
+                            <outlet property="delegate" destination="UeZ-Ql-76s" id="2Q7-SU-4XH"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bU4-NM-gao" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1667" y="-1269"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="zPz-hi-F2l">
@@ -356,6 +386,24 @@ groupe Cluztr.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0A1-pw-qbg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aWz-rf-jc4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qgp-Yk-CFJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Ud-cE-yHa" kind="relationship" relationship="rootViewController" id="JOt-1A-LBd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLK-0U-67S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="152" y="-1269"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0B826F1BF5595A00D6CA10 /* JoinGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0B826E1BF5595A00D6CA10 /* JoinGroupTableViewController.swift */; };
+		8C0B82721BF55A0500D6CA10 /* JoinGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0B82711BF55A0500D6CA10 /* JoinGroupTableViewCell.swift */; };
 		8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4510FE1BBE92F9004BDC9A /* AppDelegate.swift */; };
 		8C4511011BBE92F9004BDC9A /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4511001BBE92F9004BDC9A /* GroupViewController.swift */; };
 		8C4511031BBE92F9004BDC9A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4511021BBE92F9004BDC9A /* SecondViewController.swift */; };
@@ -135,6 +137,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C0B826E1BF5595A00D6CA10 /* JoinGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGroupTableViewController.swift; sourceTree = "<group>"; };
+		8C0B82711BF55A0500D6CA10 /* JoinGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGroupTableViewCell.swift; sourceTree = "<group>"; };
 		8C4510FB1BBE92F9004BDC9A /* Cluztr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cluztr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4510FE1BBE92F9004BDC9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C4511001BBE92F9004BDC9A /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +179,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C0B82701BF559AE00D6CA10 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8C0B82711BF55A0500D6CA10 /* JoinGroupTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
 		8C4510F21BBE92F9004BDC9A = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +209,7 @@
 		8C4510FD1BBE92F9004BDC9A /* Cluztr */ = {
 			isa = PBXGroup;
 			children = (
+				8C0B82701BF559AE00D6CA10 /* TableViewCell */,
 				F174E9581BD0FF4000D15FDC /* Helpers */,
 				8C98A5CA1BC438DC00F621E0 /* Models */,
 				8C98A5B21BC4267100F621E0 /* Routers */,
@@ -213,6 +226,7 @@
 				8C9642591BC4D342001982D3 /* NotificationViewController.swift */,
 				8C96425F1BC4D3B9001982D3 /* ChatViewController.swift */,
 				8C4ED9621BE835D9008962A1 /* SelectGroupViewController.swift */,
+				8C0B826E1BF5595A00D6CA10 /* JoinGroupTableViewController.swift */,
 			);
 			path = Cluztr;
 			sourceTree = "<group>";
@@ -439,6 +453,7 @@
 				8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */,
 				8C4ED9631BE835D9008962A1 /* SelectGroupViewController.swift in Sources */,
 				8C98A5CC1BC438ED00F621E0 /* UserModel.swift in Sources */,
+				8C0B82721BF55A0500D6CA10 /* JoinGroupTableViewCell.swift in Sources */,
 				8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */,
 				8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */,
 				8C98A5B11BC4266C00F621E0 /* UserRouter.swift in Sources */,
@@ -446,6 +461,7 @@
 				8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */,
 				8C4511011BBE92F9004BDC9A /* GroupViewController.swift in Sources */,
 				F174E9621BD0FF6000D15FDC /* HttpHelper.swift in Sources */,
+				8C0B826F1BF5595A00D6CA10 /* JoinGroupTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
