@@ -9,7 +9,7 @@
         <!--Mon groupe-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController storyboardIdentifier="GroupTab" id="9pv-A4-QxB" customClass="FirstViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupTab" id="9pv-A4-QxB" customClass="GroupViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -31,16 +31,45 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="BtW-F2-5z9">
+                                <rect key="frame" x="263" y="63" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="78z-JJ-G52"/>
+                                    <constraint firstAttribute="height" constant="75" id="hvn-2s-ZNK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Luh-ge-8DA">
+                                <rect key="frame" x="505" y="63" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="WgP-n3-hgX"/>
+                                    <constraint firstAttribute="height" constant="75" id="q4d-We-mM1"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="ebA-w7-Ppm">
+                                <rect key="frame" x="20" y="63" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="HSk-rn-msZ"/>
+                                    <constraint firstAttribute="height" constant="75" id="uGb-51-yhl"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
+                            <constraint firstItem="BtW-F2-5z9" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="HqO-te-D25"/>
+                            <constraint firstItem="ebA-w7-Ppm" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="OQD-7e-tiC"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="Luh-ge-8DA" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="fFL-M6-PdT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mon groupe" image="GroupIcon" selectedImage="GroupIcon" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="firstMemberImage" destination="ebA-w7-Ppm" id="mrN-Fx-Gf0"/>
+                        <outlet property="secondMemberImage" destination="BtW-F2-5z9" id="ht1-lq-2B4"/>
+                        <outlet property="thirdMemberImage" destination="Luh-ge-8DA" id="qgI-xV-zoY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -335,6 +364,7 @@ groupe Cluztr.</string>
         <image name="NotificationIcon" width="25" height="25"/>
         <image name="ProfilIcon" width="25" height="25"/>
         <image name="Walkthroughs - 01" width="640" height="732"/>
+        <image name="default_avatar" width="200" height="200"/>
         <image name="selectGroup" width="640" height="1136"/>
     </resources>
 </document>

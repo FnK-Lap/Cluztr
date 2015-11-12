@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4510FE1BBE92F9004BDC9A /* AppDelegate.swift */; };
-		8C4511011BBE92F9004BDC9A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4511001BBE92F9004BDC9A /* FirstViewController.swift */; };
+		8C4511011BBE92F9004BDC9A /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4511001BBE92F9004BDC9A /* GroupViewController.swift */; };
 		8C4511031BBE92F9004BDC9A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4511021BBE92F9004BDC9A /* SecondViewController.swift */; };
 		8C4511061BBE92F9004BDC9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511041BBE92F9004BDC9A /* Main.storyboard */; };
 		8C4511081BBE92F9004BDC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511071BBE92F9004BDC9A /* Assets.xcassets */; };
@@ -137,7 +137,7 @@
 /* Begin PBXFileReference section */
 		8C4510FB1BBE92F9004BDC9A /* Cluztr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cluztr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4510FE1BBE92F9004BDC9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C4511001BBE92F9004BDC9A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		8C4511001BBE92F9004BDC9A /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		8C4511021BBE92F9004BDC9A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8C4511051BBE92F9004BDC9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C4511071BBE92F9004BDC9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 				8C98A5CA1BC438DC00F621E0 /* Models */,
 				8C98A5B21BC4267100F621E0 /* Routers */,
 				8C4510FE1BBE92F9004BDC9A /* AppDelegate.swift */,
-				8C4511001BBE92F9004BDC9A /* FirstViewController.swift */,
+				8C4511001BBE92F9004BDC9A /* GroupViewController.swift */,
 				8C4511021BBE92F9004BDC9A /* SecondViewController.swift */,
 				8C4511041BBE92F9004BDC9A /* Main.storyboard */,
 				8C4511071BBE92F9004BDC9A /* Assets.xcassets */,
@@ -444,7 +444,7 @@
 				8C98A5B11BC4266C00F621E0 /* UserRouter.swift in Sources */,
 				F11DDC001BE916EC008F88B4 /* GroupRouter.swift in Sources */,
 				8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */,
-				8C4511011BBE92F9004BDC9A /* FirstViewController.swift in Sources */,
+				8C4511011BBE92F9004BDC9A /* GroupViewController.swift in Sources */,
 				F174E9621BD0FF6000D15FDC /* HttpHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

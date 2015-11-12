@@ -14,11 +14,14 @@ enum GroupRouter: URLRequestConvertible {
     static let baseURLString = "http://localhost:3000/api/v1"
     
     case CreateGroup()
+    case GetGroup(JSON)
     
     var method: Alamofire.Method {
         switch self {
         case .CreateGroup:
             return .POST
+        case .GetGroup:
+            return .GET
         }
     }
     
@@ -26,6 +29,8 @@ enum GroupRouter: URLRequestConvertible {
         switch self {
         case .CreateGroup:
             return "/groups"
+        case .GetGroup(let id):
+            return "/group/\(id)"
         }
     }
     
