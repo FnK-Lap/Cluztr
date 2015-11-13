@@ -12,7 +12,15 @@ class JoinGroupTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        HttpHelper().request(UserRouter.GetInvitations(),
+            fromController: self,
+            success: {json in
+                print(json)
+            },
+            errors: {json in
+                print(json)
+            }
+        )
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

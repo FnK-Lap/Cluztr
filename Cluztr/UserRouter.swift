@@ -14,7 +14,7 @@ enum UserRouter: URLRequestConvertible {
     static let baseURLString = "http://localhost:3000"
     
     case LoginUser([String: AnyObject])
-    case GetInvitations(JSON)
+    case GetInvitations()
     
     var method: Alamofire.Method {
         switch self {
@@ -29,8 +29,8 @@ enum UserRouter: URLRequestConvertible {
         switch self {
         case .LoginUser:
             return "/login"
-        case .GetInvitations(let id):
-            return "/api/v1/user/\(id)/invitations"
+        case .GetInvitations:
+            return "/api/v1/user/me/invitations"
         }
     }
     
@@ -47,8 +47,8 @@ enum UserRouter: URLRequestConvertible {
             return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
         default:
             if let token = Locksmith.loadDataForUserAccount("access_token"), let email = Locksmith.loadDataForUserAccount("email") {
-                mutableURLRequest.addValue("\(token)", forHTTPHeaderField: "x-access-token")
-                mutableURLRequest.addValue("\(email)", forHTTPHeaderField: "x-key")
+                mutableURLRequest.addValue("\(token["access_token"]!)", forHTTPHeaderField: "x-access-token")
+                mutableURLRequest.addValue("\(email["email"]!)", forHTTPHeaderField: "x-key")
             }
             return mutableURLRequest
         }

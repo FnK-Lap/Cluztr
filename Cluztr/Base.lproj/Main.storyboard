@@ -169,7 +169,7 @@
                     </view>
                     <connections>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="StartSegue" id="oGR-jB-e3z"/>
-                        <segue destination="8Ud-cE-yHa" kind="show" identifier="SelectGroupSegue" id="xa6-gh-f1m"/>
+                        <segue destination="aWz-rf-jc4" kind="show" identifier="SelectGroupSegue" id="ETf-NC-CGR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RK3-JJ-HbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,7 +331,7 @@ groupe Cluztr.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPR-Te-Riy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="172" y="-1261"/>
+            <point key="canvasLocation" x="1076" y="-1273"/>
         </scene>
         <!--Join Group Table View Controller-->
         <scene sceneID="cyb-qw-XLz">
@@ -343,7 +343,7 @@ groupe Cluztr.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ebW-F3-USN" customClass="JoinGroupTableViewCell" customModule="Cluztr" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebW-F3-USN" id="GeR-y2-7vW">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -359,7 +359,7 @@ groupe Cluztr.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bU4-NM-gao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1667" y="-1269"/>
+            <point key="canvasLocation" x="2059" y="-1273"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="zPz-hi-F2l">
@@ -405,7 +405,7 @@ groupe Cluztr.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLK-0U-67S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-78" y="-2181"/>
+            <point key="canvasLocation" x="230" y="-1273"/>
         </scene>
     </scenes>
     <resources>
@@ -417,7 +417,4 @@ groupe Cluztr.</string>
         <image name="default_avatar" width="200" height="200"/>
         <image name="selectGroup" width="640" height="1136"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="xa6-gh-f1m"/>
-    </inferredMetricsTieBreakers>
 </document>
