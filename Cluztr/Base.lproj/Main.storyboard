@@ -335,18 +335,54 @@ groupe Cluztr.</string>
         <scene sceneID="cyb-qw-XLz">
             <objects>
                 <tableViewController id="UeZ-Ql-76s" customClass="JoinGroupTableViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QaO-is-ntj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="144" sectionHeaderHeight="28" sectionFooterHeight="28" id="QaO-is-ntj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invitation de groupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="anP-e9-iYi">
+                            <rect key="frame" x="0.0" y="64" width="600" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ebW-F3-USN" customClass="JoinGroupTableViewCell" customModule="Cluztr" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="144" id="ebW-F3-USN" customClass="JoinGroupTableViewCell" customModule="Cluztr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="120" width="600" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebW-F3-USN" id="GeR-y2-7vW">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toto vous invite a rejoindre son groupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hil-fE-Gov">
+                                            <rect key="frame" x="15" y="8" width="408" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y0z-XQ-Jwa">
+                                            <rect key="frame" x="106" y="41" width="70" height="78"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hcl-Dv-gcd">
+                                            <rect key="frame" x="245" y="41" width="70" height="78"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFl-2h-KYs">
+                                            <rect key="frame" x="363" y="65" width="80" height="30"/>
+                                            <state key="normal" title="Accepter"/>
+                                            <connections>
+                                                <action selector="acceptButton:" destination="ebW-F3-USN" eventType="touchUpInside" id="GGp-eD-ub8"/>
+                                                <action selector="acceptButtonAction:" destination="ebW-F3-USN" eventType="touchUpInside" id="n2c-FL-aKa"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="acceptButton" destination="AFl-2h-KYs" id="cMQ-7c-eMs"/>
+                                    <outlet property="firstUserImage" destination="y0z-XQ-Jwa" id="6Dp-BY-15Q"/>
+                                    <outlet property="secondUserImage" destination="Hcl-Dv-gcd" id="LE9-zK-nwT"/>
+                                    <outlet property="userInvite" destination="hil-fE-Gov" id="g1L-1M-589"/>
+                                    <outlet property="userInviteLabel" destination="hil-fE-Gov" id="iCa-pH-HlJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
