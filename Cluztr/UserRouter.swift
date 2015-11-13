@@ -14,11 +14,14 @@ enum UserRouter: URLRequestConvertible {
     static let baseURLString = "http://localhost:3000"
     
     case LoginUser([String: AnyObject])
+    case GetInvitations(JSON)
     
     var method: Alamofire.Method {
         switch self {
         case .LoginUser:
             return .POST
+        case .GetInvitations:
+            return .GET
         }
     }
     
@@ -26,6 +29,8 @@ enum UserRouter: URLRequestConvertible {
         switch self {
         case .LoginUser:
             return "/login"
+        case .GetInvitations(let id):
+            return "/api/v1/user/\(id)/invitations"
         }
     }
     
