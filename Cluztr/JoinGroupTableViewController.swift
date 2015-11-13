@@ -70,7 +70,6 @@ class JoinGroupTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JoinGroupTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("invitationCell", forIndexPath: indexPath) as! JoinGroupTableViewCell
         
-        print(self.invitations![indexPath.row]["groupId"])
         cell.initUI(self.invitations![indexPath.row]["userId"], group: self.invitations![indexPath.row]["groupId"])
         
         return cell

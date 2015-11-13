@@ -24,9 +24,7 @@ class JoinGroupTableViewCell: UITableViewCell {
         self.userInviteLabel.text = "\(self.user!["firstname"]) vous invite a rejoindre son groupe."
         
         for (key, value) in self.group!["usersId"] {
-            print(value)
             let url = NSURL(string: value["profilePicture"]["url"].string!)!
-            print(url);
             if key == "0" {
                 self.loadPictureFrom(url, withCompletion: { (picture, error) -> Void in
                     self.firstUserImage.image = picture
