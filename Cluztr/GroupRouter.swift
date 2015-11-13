@@ -15,6 +15,8 @@ enum GroupRouter: URLRequestConvertible {
     
     case CreateGroup()
     case GetGroup(JSON)
+    case Invite(JSON, [String: AnyObject])
+    case Join(JSON)
     
     var method: Alamofire.Method {
         switch self {
@@ -22,6 +24,10 @@ enum GroupRouter: URLRequestConvertible {
             return .POST
         case .GetGroup:
             return .GET
+        case .Invite:
+            return .POST
+        case .Join:
+            return .POST
         }
     }
     
@@ -31,6 +37,10 @@ enum GroupRouter: URLRequestConvertible {
             return "/groups"
         case .GetGroup(let id):
             return "/group/\(id)"
+        case .Invite(let id, _):
+            return "/group/\(id)/invite"
+        case .Join(let id):
+            return "/group/\(id)/join"
         }
     }
     
@@ -43,6 +53,8 @@ enum GroupRouter: URLRequestConvertible {
         
         
         switch self {
+        case .Invite(_, let parameters):
+            return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
         default:
             if let token = Locksmith.loadDataForUserAccount("access_token"), let email = Locksmith.loadDataForUserAccount("email") {
                 mutableURLRequest.addValue("\(token["access_token"]!)", forHTTPHeaderField: "x-access-token")
