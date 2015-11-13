@@ -9,14 +9,19 @@
 import UIKit
 
 class JoinGroupTableViewController: UITableViewController {
+    
+    var invitations: JSON?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         HttpHelper().request(UserRouter.GetInvitations(),
             fromController: self,
             success: {json in
+                print(json)
                 if json["status"] == 200 {
-                    
+                    self.invitations = json["data"]
+                    self.initUI()
+                    self.tableView.reloadData()
                 }
             },
             errors: {json in
@@ -34,6 +39,10 @@ class JoinGroupTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    func initUI(){
+        
+    }
+    
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false);
     }
@@ -47,23 +56,25 @@ class JoinGroupTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if let count = self.invitations?.count{
+            return count
+        }
         return 0
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JoinGroupTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("invitationCell", forIndexPath: indexPath) as! JoinGroupTableViewCell
+        
+        print(self.invitations![indexPath.row]["groupId"])
+        cell.initUI(self.invitations![indexPath.row]["userId"], group: self.invitations![indexPath.row]["groupId"])
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

@@ -349,40 +349,44 @@ groupe Cluztr.</string>
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="144" id="ebW-F3-USN" customClass="JoinGroupTableViewCell" customModule="Cluztr" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="invitationCell" rowHeight="144" id="ebW-F3-USN" customClass="JoinGroupTableViewCell" customModule="Cluztr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="120" width="600" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ebW-F3-USN" id="GeR-y2-7vW">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toto vous invite a rejoindre son groupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hil-fE-Gov">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tintin vous invite a rejoindre son groupe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hil-fE-Gov">
                                             <rect key="frame" x="15" y="8" width="408" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y0z-XQ-Jwa">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="y0z-XQ-Jwa">
                                             <rect key="frame" x="106" y="41" width="70" height="78"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="345-yo-PQj"/>
+                                                <constraint firstAttribute="height" constant="75" id="fQK-I0-HkP"/>
+                                            </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hcl-Dv-gcd">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Hcl-Dv-gcd">
                                             <rect key="frame" x="245" y="41" width="70" height="78"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="WaQ-jL-qP6"/>
+                                                <constraint firstAttribute="height" constant="75" id="taE-ZX-mGO"/>
+                                            </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFl-2h-KYs">
-                                            <rect key="frame" x="363" y="65" width="80" height="30"/>
-                                            <state key="normal" title="Accepter"/>
-                                            <connections>
-                                                <action selector="acceptButton:" destination="ebW-F3-USN" eventType="touchUpInside" id="GGp-eD-ub8"/>
-                                                <action selector="acceptButtonAction:" destination="ebW-F3-USN" eventType="touchUpInside" id="n2c-FL-aKa"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Hcl-Dv-gcd" firstAttribute="centerX" secondItem="GeR-y2-7vW" secondAttribute="centerX" id="QDj-mF-gAg"/>
+                                        <constraint firstItem="y0z-XQ-Jwa" firstAttribute="leading" secondItem="GeR-y2-7vW" secondAttribute="leadingMargin" id="VcO-Ep-t9B"/>
+                                        <constraint firstItem="Hcl-Dv-gcd" firstAttribute="top" secondItem="hil-fE-Gov" secondAttribute="bottom" constant="12" id="YRf-ev-6sg"/>
+                                        <constraint firstItem="y0z-XQ-Jwa" firstAttribute="top" secondItem="hil-fE-Gov" secondAttribute="bottom" constant="12" id="hHR-jR-MfY"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="acceptButton" destination="AFl-2h-KYs" id="cMQ-7c-eMs"/>
                                     <outlet property="firstUserImage" destination="y0z-XQ-Jwa" id="6Dp-BY-15Q"/>
                                     <outlet property="secondUserImage" destination="Hcl-Dv-gcd" id="LE9-zK-nwT"/>
-                                    <outlet property="userInvite" destination="hil-fE-Gov" id="g1L-1M-589"/>
                                     <outlet property="userInviteLabel" destination="hil-fE-Gov" id="iCa-pH-HlJ"/>
                                 </connections>
                             </tableViewCell>

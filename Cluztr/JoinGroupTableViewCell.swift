@@ -18,12 +18,14 @@ class JoinGroupTableViewCell: UITableViewCell {
     @IBOutlet weak var secondUserImage: UIImageView!
     @IBOutlet weak var acceptButton: UIButton!
     
-    func initUI() {
+    func initUI(user: JSON, group: JSON) {
+        self.user = user
+        self.group = group
         self.userInviteLabel.text = "\(self.user!["firstname"]) vous invite a rejoindre son groupe."
         
-        for (key, user) in self.group!["usersId"] {
-            print(key)
-            let url = NSURL(string: user["profilePicture"]["url"].string!)!
+        for (key, value) in self.group!["usersId"] {
+            print(value)
+            let url = NSURL(string: value["profilePicture"]["url"].string!)!
             print(url);
             if key == "0" {
                 self.loadPictureFrom(url, withCompletion: { (picture, error) -> Void in
@@ -43,18 +45,6 @@ class JoinGroupTableViewCell: UITableViewCell {
         
         completion(picture: picture, error: nil)
     }
-    
-    @IBAction func acceptButton(sender: AnyObject) {
-        HttpHelper().request(GroupRouter.Join(),
-            fromController: self,
-            success: {_ in
-                let tabBarViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as TabBarViewController
-                self.pushViewController(TabBarViewController, animated: true)
-            },
-            errors: {_ in
-                //error message
-            }
-        )}
     
     override func awakeFromNib() {
         super.awakeFromNib()
