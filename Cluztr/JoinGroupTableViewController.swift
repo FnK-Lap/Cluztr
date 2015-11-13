@@ -15,10 +15,16 @@ class JoinGroupTableViewController: UITableViewController {
         HttpHelper().request(UserRouter.GetInvitations(),
             fromController: self,
             success: {json in
-                print(json)
+                if json["status"] == 200 {
+                    
+                }
             },
             errors: {json in
                 print(json)
+                let alertController = UIAlertController(title: "Erreur", message: "Une erreur est survenue", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
         )
         // Uncomment the following line to preserve selection between presentations
