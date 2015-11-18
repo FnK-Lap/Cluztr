@@ -20,7 +20,6 @@ class JoinGroupTableViewController: UITableViewController {
                 print(json)
                 if json["status"] == 200 {
                     self.invitations = json["data"]
-                    self.initUI()
                     self.tableView.reloadData()
                 }
             },
@@ -37,10 +36,6 @@ class JoinGroupTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    func initUI(){
-        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -70,11 +65,50 @@ class JoinGroupTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> JoinGroupTableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("invitationCell", forIndexPath: indexPath) as! JoinGroupTableViewCell
         
+        cell.joinButton.tag = indexPath.row
         cell.initUI(self.invitations![indexPath.row]["userId"], group: self.invitations![indexPath.row]["groupId"])
         
         return cell
     }
 
+    @IBAction func joinButtonAction(sender: AnyObject) {
+        let button: UIButton = sender as! UIButton
+        let invitation = self.invitations![button.tag]
+        let group = invitation["groupId"]
+        
+        let alertController = UIAlertController(title: "Rejoindre groupe", message: "Voulez vous vraiment accepter l'invitation de \(invitation["userId"]["firstname"]) à rejoindre son groupe ?", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "Rejoindre", style: UIAlertActionStyle.Destructive, handler: { (action: UIAlertAction) in
+            HttpHelper().request(GroupRouter.Join(group["_id"]),
+                fromController: self,
+                success: {json in
+                    print(json)
+                    let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
+                    startViewController?.user = json["user"]
+                    self.presentViewController(startViewController!, animated: true, completion: nil)
+                },
+                errors: {json in
+                    print(json)
+                    
+                    var errorMessage = "Une erreur est survenue"
+                    
+                    if (json["message"].string != nil) {
+                        errorMessage = json["message"].string!
+                    }
+                    
+                    let alertController = UIAlertController(title: "Erreur", message: "\(errorMessage)", preferredStyle: UIAlertControllerStyle.Alert)
+                    alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
+            )
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Non", style: UIAlertActionStyle.Cancel, handler: nil ))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

@@ -16,7 +16,7 @@ class JoinGroupTableViewCell: UITableViewCell {
     @IBOutlet weak var userInviteLabel: UILabel!
     @IBOutlet weak var firstUserImage: UIImageView!
     @IBOutlet weak var secondUserImage: UIImageView!
-    @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var joinButton: UIButton!
     
     func initUI(user: JSON, group: JSON) {
         self.user = user
