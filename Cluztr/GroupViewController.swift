@@ -16,6 +16,10 @@ class GroupViewController: UIViewController {
     @IBOutlet weak var secondMemberImage: UIImageView!
     @IBOutlet weak var thirdMemberImage: UIImageView!
     
+    @IBOutlet weak var firstMemberName: UIButton!
+    @IBOutlet weak var secondMemberName: UIButton!
+    @IBOutlet weak var thirdMemberName: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tabBarController = self.tabBarController as! TabBarViewController
@@ -47,23 +51,52 @@ class GroupViewController: UIViewController {
         self.tabBarItem.image = UIImage.init(named: "GroupIcon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         print(self.group)
         
-        
         for (key, user) in self.group!["usersId"] {
-            print(key)
-            let url = NSURL(string: user["profilePicture"]["url"].string!)!
-            print(url);
+            // User Informations
+            let profilePictureUrl = NSURL(string: user["profilePicture"]["url"].string!)!
+            let firstname         = user["firstname"].string!
+            let ageString         = "\(user["age"].number!) ans"
+            
+            let ageRange = NSMakeRange(0, ageString.characters.count)
+            
+            // Gender Icon
+            let genderAttachment = NSTextAttachment()
+            genderAttachment.image = UIImage(named: "\(user["gender"])")
+            genderAttachment.bounds = CGRectMake(0, -1, 10, 10)
+            
+            // Prepare String and concat
+            let nameAttributedString   = NSMutableAttributedString(string: "\(firstname)\n")
+            let genderAttributedString = NSAttributedString(attachment: genderAttachment) as! NSMutableAttributedString
+            let ageAttributedString    = NSMutableAttributedString(string: "\(ageString)")
+
+            ageAttributedString.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12), range: ageRange)
+            nameAttributedString.appendAttributedString(genderAttributedString)
+            nameAttributedString.appendAttributedString(ageAttributedString)
+
+            
             if key == "0" {
-                self.loadPictureFrom(url, withCompletion: { (picture, error) -> Void in
+                self.loadPictureFrom(profilePictureUrl, withCompletion: { (picture, error) -> Void in
                     self.firstMemberImage.image = picture
                 })
+                self.firstMemberName.titleLabel?.numberOfLines = 2
+                self.firstMemberName.titleLabel?.textAlignment = .Center
+                self.firstMemberName.setAttributedTitle(nameAttributedString, forState: .Normal)
+                
             } else if key == "1" {
-                self.loadPictureFrom(url, withCompletion: { (picture, error) -> Void in
+                self.loadPictureFrom(profilePictureUrl, withCompletion: { (picture, error) -> Void in
                     self.secondMemberImage.image = picture
                 })
+                self.secondMemberName.titleLabel?.numberOfLines = 2
+                self.secondMemberName.titleLabel?.textAlignment = .Center
+                self.secondMemberName.setAttributedTitle(nameAttributedString, forState: .Normal)
+                
             } else if key == "2" {
-                self.loadPictureFrom(url, withCompletion: { (picture, error) -> Void in
+                self.loadPictureFrom(profilePictureUrl, withCompletion: { (picture, error) -> Void in
                     self.thirdMemberImage.image = picture
                 })
+                self.thirdMemberName.titleLabel?.numberOfLines = 2
+                self.thirdMemberName.titleLabel?.textAlignment = .Center
+                self.thirdMemberName.setAttributedTitle(nameAttributedString, forState: .Normal)
             }
         }
     }

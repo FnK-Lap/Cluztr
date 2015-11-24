@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Mon groupe-->
@@ -67,23 +68,68 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2R-Dp-bOU">
+                                <rect key="frame" x="200" y="183" width="200" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.32941176470588235" green="0.41176470588235292" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSI-o5-9kd">
+                                <rect key="frame" x="0.0" y="183" width="200" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.32941176470588235" green="0.41176470588235292" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncd-Hw-Ffo">
+                                <rect key="frame" x="400" y="183" width="200" height="45"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.32941176470588235" green="0.41176470588235292" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
+                            <constraint firstItem="Ncd-Hw-Ffo" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" multiplier="1:3" id="AHD-7V-MHl"/>
                             <constraint firstItem="BtW-F2-5z9" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="HqO-te-D25"/>
+                            <constraint firstItem="w2R-Dp-bOU" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="L7X-GU-99U"/>
                             <constraint firstItem="ebA-w7-Ppm" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" id="OQD-7e-tiC"/>
+                            <constraint firstItem="HSI-o5-9kd" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" multiplier="1:3" id="T4c-g7-tun"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
+                            <constraint firstItem="w2R-Dp-bOU" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" multiplier="1:3" id="e0J-Qr-gUJ"/>
                             <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
                             <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
                             <constraint firstItem="Luh-ge-8DA" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="fFL-M6-PdT"/>
+                            <constraint firstAttribute="trailing" secondItem="Ncd-Hw-Ffo" secondAttribute="trailing" id="nMX-Fd-TCt"/>
+                            <constraint firstItem="HSI-o5-9kd" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="zfe-1C-xHU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mon groupe" image="GroupIcon" selectedImage="GroupIcon" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="firstMemberImage" destination="ebA-w7-Ppm" id="mrN-Fx-Gf0"/>
+                        <outlet property="firstMemberName" destination="HSI-o5-9kd" id="IPh-qL-Waf"/>
                         <outlet property="secondMemberImage" destination="BtW-F2-5z9" id="7a3-1K-Tmx"/>
+                        <outlet property="secondMemberName" destination="w2R-Dp-bOU" id="lzO-W0-gx3"/>
                         <outlet property="thirdMemberImage" destination="Luh-ge-8DA" id="yr3-oH-mDi"/>
+                        <outlet property="thirdMemberName" destination="Ncd-Hw-Ffo" id="iFX-mc-c0z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
