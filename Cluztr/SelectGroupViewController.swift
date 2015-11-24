@@ -41,7 +41,6 @@ class SelectGroupViewController: UIViewController {
     
     @IBAction func createGroupButton(sender: AnyObject) {
         HttpHelper().request(GroupRouter.CreateGroup(),
-            fromController: self,
             success: { json in
                print("success \(json)")
                 if json["status"] == 201 {

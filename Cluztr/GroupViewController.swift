@@ -20,14 +20,17 @@ class GroupViewController: UIViewController {
         super.viewDidLoad()
         let tabBarController = self.tabBarController as! TabBarViewController
         let groupId = tabBarController.user!["groupId"]
-        HttpHelper().request(GroupRouter.GetGroup(groupId), fromController: self,
+        HttpHelper().request(GroupRouter.GetGroup(groupId),
             success: {json in
                 // User Login
                 self.group = json["data"]
                 self.initUI()
             },
-            errors: {_ in
-                // TODO: Error
+            errors: {error in
+                let alertController = UIAlertController(title: "Error Network", message: "\(error["message"])", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
             }
         )
 

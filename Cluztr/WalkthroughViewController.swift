@@ -49,7 +49,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
     }
     
     func loginAPI() {
-        HttpHelper().request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]), fromController: self,
+        HttpHelper().request(UserRouter.LoginUser(["fb_access_token":FBSDKAccessToken.currentAccessToken().tokenString]),
             success: {json in
                 // User Login
                 if (json["status"] == 200) {
@@ -68,8 +68,14 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
                     self.performSegueWithIdentifier("SelectGroupSegue", sender: nil)
                 }
             },
-            errors: {_ in
+            errors: {error in
                 print("else")
+                
+                let alertController = UIAlertController(title: "Error Network", message: "\(error["message"])", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                
                 if self.logged == false {
                     FBSDKLoginManager().logOut()
                     self.startWalkthrough()

@@ -15,7 +15,6 @@ class JoinGroupTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         HttpHelper().request(UserRouter.GetInvitations(),
-            fromController: self,
             success: {json in
                 print(json)
                 if json["status"] == 200 {
@@ -80,7 +79,6 @@ class JoinGroupTableViewController: UITableViewController {
         
         alertController.addAction(UIAlertAction(title: "Rejoindre", style: UIAlertActionStyle.Destructive, handler: { (action: UIAlertAction) in
             HttpHelper().request(GroupRouter.Join(group["_id"]),
-                fromController: self,
                 success: {json in
                     print(json)
                     let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
