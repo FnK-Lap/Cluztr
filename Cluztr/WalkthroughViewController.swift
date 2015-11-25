@@ -151,8 +151,15 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         
         if error == nil {
             // Retour de Facebook
-            print("----- Logged FB, Not logged API")
-            self.loginAPI()
+            if FBSDKAccessToken.currentAccessToken() == nil {
+                print("----- Not logged : (FB + API)")
+                startWalkthrough()
+            } else {
+                print("----- Logged FB, Not logged API")
+                
+                self.loginAPI()
+                
+            }
             
         } else {
             print(error.localizedDescription)
@@ -166,6 +173,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         if let _ = Locksmith.loadDataForUserAccount("access_token") {
             do {
                 try Locksmith.deleteDataForUserAccount("access_token")
+                try Locksmith.deleteDataForUserAccount("email")
             } catch _ {
                 print("Error delete access token from keychain")
             }
