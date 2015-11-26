@@ -51,13 +51,24 @@ class GroupViewController: UIViewController {
         self.tabBarItem.image = UIImage.init(named: "GroupIcon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         print(self.group)
         
+        self.firstMemberName.titleLabel?.numberOfLines = 2
+        self.firstMemberName.titleLabel?.textAlignment = .Center
+        
+        self.secondMemberName.titleLabel?.numberOfLines = 2
+        self.secondMemberName.titleLabel?.textAlignment = .Center
+        self.secondMemberName.setTitle("Invite\nun ami", forState: .Normal)
+        
+        self.thirdMemberName.titleLabel?.numberOfLines = 2
+        self.thirdMemberName.titleLabel?.textAlignment = .Center
+        self.thirdMemberName.setTitle("Invite\nun ami", forState: .Normal)
+        
         for (key, user) in self.group!["usersId"] {
             // User Informations
             let profilePictureUrl = NSURL(string: user["profilePicture"]["url"].string!)!
             let firstname         = user["firstname"].string!
             let ageString         = "\(user["age"].number!) ans"
             
-            let ageRange = NSMakeRange(0, ageString.characters.count)
+            let nameRange = NSMakeRange(0, firstname.characters.count)
             
             // Gender Icon
             let genderAttachment = NSTextAttachment()
@@ -69,7 +80,7 @@ class GroupViewController: UIViewController {
             let genderAttributedString = NSAttributedString(attachment: genderAttachment) as! NSMutableAttributedString
             let ageAttributedString    = NSMutableAttributedString(string: "\(ageString)")
 
-            ageAttributedString.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(12), range: ageRange)
+            nameAttributedString.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFontOfSize(15), range: nameRange)
             nameAttributedString.appendAttributedString(genderAttributedString)
             nameAttributedString.appendAttributedString(ageAttributedString)
 
@@ -78,24 +89,18 @@ class GroupViewController: UIViewController {
                 self.loadPictureFrom(profilePictureUrl, withCompletion: { (picture, error) -> Void in
                     self.firstMemberImage.image = picture
                 })
-                self.firstMemberName.titleLabel?.numberOfLines = 2
-                self.firstMemberName.titleLabel?.textAlignment = .Center
                 self.firstMemberName.setAttributedTitle(nameAttributedString, forState: .Normal)
                 
             } else if key == "1" {
                 self.loadPictureFrom(profilePictureUrl, withCompletion: { (picture, error) -> Void in
                     self.secondMemberImage.image = picture
                 })
-                self.secondMemberName.titleLabel?.numberOfLines = 2
-                self.secondMemberName.titleLabel?.textAlignment = .Center
                 self.secondMemberName.setAttributedTitle(nameAttributedString, forState: .Normal)
                 
             } else if key == "2" {
                 self.loadPictureFrom(profilePictureUrl, withCompletion: { (picture, error) -> Void in
                     self.thirdMemberImage.image = picture
                 })
-                self.thirdMemberName.titleLabel?.numberOfLines = 2
-                self.thirdMemberName.titleLabel?.textAlignment = .Center
                 self.thirdMemberName.setAttributedTitle(nameAttributedString, forState: .Normal)
             }
         }
