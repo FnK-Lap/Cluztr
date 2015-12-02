@@ -17,6 +17,7 @@
 		8C45110B1BBE92F9004BDC9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511091BBE92F9004BDC9A /* LaunchScreen.storyboard */; };
 		8C4ED9631BE835D9008962A1 /* SelectGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4ED9621BE835D9008962A1 /* SelectGroupViewController.swift */; };
 		8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */; };
+		8C6E7A861C0F8C77001673B2 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6E7A851C0F8C77001673B2 /* CALayerExtension.swift */; };
 		8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8940781BC295F8009783AB /* TabBarViewController.swift */; };
 		8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */; };
 		8C96425A1BC4D342001982D3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9642591BC4D342001982D3 /* NotificationViewController.swift */; };
@@ -149,6 +150,7 @@
 		8C45110C1BBE92F9004BDC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C4ED9621BE835D9008962A1 /* SelectGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGroupViewController.swift; sourceTree = "<group>"; };
 		8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		8C6E7A851C0F8C77001673B2 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		8C8940781BC295F8009783AB /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		8C9642591BC4D342001982D3 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		8C4510FD1BBE92F9004BDC9A /* Cluztr */ = {
 			isa = PBXGroup;
 			children = (
+				8C6E7A8F1C0F8C96001673B2 /* Extensions */,
 				8C0B82701BF559AE00D6CA10 /* TableViewCell */,
 				F174E9581BD0FF4000D15FDC /* Helpers */,
 				8C98A5CA1BC438DC00F621E0 /* Models */,
@@ -229,6 +232,14 @@
 				8C0B826E1BF5595A00D6CA10 /* JoinGroupTableViewController.swift */,
 			);
 			path = Cluztr;
+			sourceTree = "<group>";
+		};
+		8C6E7A8F1C0F8C96001673B2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8C6E7A851C0F8C77001673B2 /* CALayerExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		8C89407C1BC2A877009783AB /* Frameworks */ = {
@@ -462,6 +473,7 @@
 				8C4511011BBE92F9004BDC9A /* GroupViewController.swift in Sources */,
 				F174E9621BD0FF6000D15FDC /* HttpHelper.swift in Sources */,
 				8C0B826F1BF5595A00D6CA10 /* JoinGroupTableViewController.swift in Sources */,
+				8C6E7A861C0F8C77001673B2 /* CALayerExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
