@@ -9,15 +9,43 @@
 import UIKit
 
 class ChatTableViewController: UITableViewController {
+    
+    var chats:JSON?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getChatFromAPI()
+        
+        
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.getChatFromAPI()
+    }
+    
+    func getChatFromAPI() {
+        let tabBarController = self.tabBarController as! TabBarViewController
+        let groupId = tabBarController.user!["groupId"]
+        
+        HttpHelper().request(GroupRouter.GetChats(groupId),
+            success: {json in
+                self.chats = json["data"]
+                self.tableView.reloadData();
+            },
+            errors: {error in
+                let alertController = UIAlertController(title: "Error Network", message: "\(error["message"])", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        )
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,13 +56,15 @@ class ChatTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 2
+        if let numberOfCell = self.chats?.count {
+            return numberOfCell
+        }
+
+        return 1
     }
 
     
@@ -48,7 +78,11 @@ class ChatTableViewController: UITableViewController {
             cell = tableView.dequeueReusableCellWithIdentifier("ChatGroupCell", forIndexPath: indexPath) as! ChatGroupTableViewCell
         }
         
-        cell.initUI()
+        if self.chats != nil {
+            cell.initUI(self.chats![indexPath.row])
+        }
+        
+        
 
         // Configure the cell...
 

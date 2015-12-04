@@ -18,10 +18,32 @@ class ChatGroupTableViewCell: UITableViewCell {
     
     @IBOutlet var memberImages: [UIImageView]!
     
-    func initUI() {
-        for (index, image) in self.memberImages.enumerate() {
-
+    func initUI(chat:JSON) {
+        print(chat)
+        
+        if chat["isPrivate"] {
+            for (index, user) in chat["ownGroup"]["usersId"].enumerate() {
+                let url = NSURL(string: user.1["profilePicture"]["url"].string!)
+                self.loadPictureFrom(url!, withCompletion: { (picture, error) -> Void in
+                    self.memberImages[index].image = picture
+                })
+            }
+        } else {
+            var chatName:String = ""
+            for (index, user) in chat["otherGroup"]["usersId"].enumerate() {
+                // Concat name
+                chatName != "" ? (chatName += ", \(user.1["firstname"])") : (chatName += user.1["firstname"].string!)
+                let url = NSURL(string: user.1["profilePicture"]["url"].string!)
+                self.loadPictureFrom(url!, withCompletion: { (picture, error) -> Void in
+                    self.memberImages[index].image = picture
+                })
+            }
+            self.nameLabel.text = chatName
         }
+        
+        self.lastMessageLabel.text = chat["messages"][0]["message"].string
+        
+        
     }
     
     override func awakeFromNib() {

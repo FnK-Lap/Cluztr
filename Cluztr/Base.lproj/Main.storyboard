@@ -269,7 +269,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invitation_background" translatesAutoresizingMaskIntoConstraints="NO" id="NNi-xE-caH">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="NNi-xE-caH">
                                             <rect key="frame" x="24" y="21" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="BDg-fQ-feT"/>
@@ -287,7 +287,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Walkthroughs - 01" translatesAutoresizingMaskIntoConstraints="NO" id="Jls-nD-iRh">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Jls-nD-iRh">
                                             <rect key="frame" x="8" y="49" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="L1i-PT-oUl"/>
@@ -305,7 +305,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="EOM-mN-217">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="EOM-mN-217">
                                             <rect key="frame" x="40" y="49" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="DcT-1N-0z0"/>
@@ -340,6 +340,9 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QS-gd-fc9">
                                             <rect key="frame" x="78" y="38" width="514" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="Ynh-LW-tra"/>
+                                            </constraints>
                                             <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas, ligula non cursus lobortis, tortor justo consectetur odio, quis congue arcu felis non augue. Integer diam eros, rutrum sed varius sed, ultrices in lorem. Suspendisse nisi purus, tempus at iaculis nec, dignissim et nisl. Curabitur dapibus massa eu est finibus efficitur. Phasellus ultrices sapien quis arcu aliquet suscipit ut et purus. Praesent pretium maximus ligula, vel pulvinar enim ullamcorper eget. Nunc imperdiet, tellus id vestibulum dictum, est metus feugiat dui, eu convallis ex elit quis lectus.</mutableString>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
@@ -389,7 +392,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invitation_background" translatesAutoresizingMaskIntoConstraints="NO" id="cSQ-JN-ZL5">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="cSQ-JN-ZL5">
                                             <rect key="frame" x="24" y="21" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="E6h-oX-Uz3"/>
@@ -407,7 +410,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Walkthroughs - 01" translatesAutoresizingMaskIntoConstraints="NO" id="iCR-lM-8Ft">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="iCR-lM-8Ft">
                                             <rect key="frame" x="8" y="49" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="Oel-Q0-Vnp"/>
@@ -425,7 +428,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="n02-LO-9E0">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="n02-LO-9E0">
                                             <rect key="frame" x="40" y="49" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="30" id="TBF-90-5pZ"/>
@@ -465,6 +468,9 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYY-D3-qu3">
                                             <rect key="frame" x="78" y="38" width="514" height="43"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="ihn-NI-jqv"/>
+                                            </constraints>
                                             <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas, ligula non cursus lobortis, tortor justo consectetur odio, quis congue arcu felis non augue. Integer diam eros, rutrum sed varius sed, ultrices in lorem. Suspendisse nisi purus, tempus at iaculis nec, dignissim et nisl. Curabitur dapibus massa eu est finibus efficitur. Phasellus ultrices sapien quis arcu aliquet suscipit ut et purus. Praesent pretium maximus ligula, vel pulvinar enim ullamcorper eget. Nunc imperdiet, tellus id vestibulum dictum, est metus feugiat dui, eu convallis ex elit quis lectus.</mutableString>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -1025,7 +1031,6 @@ groupe Cluztr.</string>
     <resources>
         <image name="ChatIcon" width="25" height="25"/>
         <image name="GroupIcon" width="25" height="25"/>
-        <image name="LaunchImage" width="640" height="1136"/>
         <image name="NotificationIcon" width="25" height="25"/>
         <image name="ProfilIcon" width="25" height="25"/>
         <image name="Walkthroughs - 01" width="640" height="732"/>
