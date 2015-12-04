@@ -49,9 +49,6 @@ class GroupViewController: UIViewController {
     }
     
     func initUI() {
-        self.tabBarItem.selectedImage = UIImage.init(named: "GroupIconSelected")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        self.tabBarItem.image = UIImage.init(named: "GroupIcon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        
         print("----- Group Informations -----")
         print(self.group)
         

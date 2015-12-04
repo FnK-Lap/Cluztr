@@ -14,9 +14,6 @@ class SecondViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarItem.selectedImage = UIImage.init(named: "ProfilIconSelected")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        self.tabBarItem.image = UIImage.init(named: "ProfilIcon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
