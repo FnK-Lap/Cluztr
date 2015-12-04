@@ -20,6 +20,8 @@ class GroupViewController: UIViewController {
     @IBOutlet weak var secondMemberName: UIButton!
     @IBOutlet weak var thirdMemberName: UIButton!
     
+    @IBOutlet weak var invitationHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tabBarController = self.tabBarController as! TabBarViewController
@@ -49,8 +51,19 @@ class GroupViewController: UIViewController {
     func initUI() {
         self.tabBarItem.selectedImage = UIImage.init(named: "GroupIconSelected")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.tabBarItem.image = UIImage.init(named: "GroupIcon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        
+        print("----- Group Informations -----")
         print(self.group)
         
+        // Show invitation button on top if group is not full
+        if self.group!["usersId"].count < 3 {
+            self.invitationHeightConstraint.constant = 150
+        } else {
+            self.invitationHeightConstraint.constant = 0
+        }
+        self.view.layoutIfNeeded()
+        
+        // Set default value
         self.firstMemberName.titleLabel?.numberOfLines = 2
         self.firstMemberName.titleLabel?.textAlignment = .Center
         
@@ -105,17 +118,24 @@ class GroupViewController: UIViewController {
             }
         }
     }
-    
     func loadPictureFrom(URL: NSURL, withCompletion completion:(picture: UIImage?, error: NSError?) -> Void) {
         let data = NSData(contentsOfURL: URL)!
         let picture = UIImage(data: data)
         
         completion(picture: picture, error: nil)
     }
-
+    
+    /*
+    // MARK: Navigation 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "InviteSegue" {
+            let destinationVC = segue.destinationViewController as! InvitationViewController
+            let tabBarViewController = self.tabBarController as! TabBarViewController
+        }
+    }
+    */
 
 // 44  0.1725
 // 173 0.6784
 // 198 0.7764
 }
-
