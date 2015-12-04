@@ -28,6 +28,7 @@
 		8C6E7AC31C0FB7FA001673B2 /* Locksmith.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C6E7AB31C0F9C1D001673B2 /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C7C3D421C105C4A00882467 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D411C105C4A00882467 /* StringExtension.swift */; };
 		8C7C3D4C1C11D5A800882467 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */; };
+		8C7C3D4E1C11E78000882467 /* ChatGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */; };
 		8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8940781BC295F8009783AB /* TabBarViewController.swift */; };
 		8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */; };
 		8C96425A1BC4D342001982D3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9642591BC4D342001982D3 /* NotificationViewController.swift */; };
@@ -161,6 +162,7 @@
 		8C6E7AC01C0F9C91001673B2 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../Frameworks/FacebookSDKs-iOS-20150910/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		8C7C3D411C105C4A00882467 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGroupTableViewCell.swift; sourceTree = "<group>"; };
 		8C8940781BC295F8009783AB /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		8C9642591BC4D342001982D3 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				8C0B82711BF55A0500D6CA10 /* JoinGroupTableViewCell.swift */,
+				8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */,
 				8C4511011BBE92F9004BDC9A /* GroupViewController.swift in Sources */,
 				F174E9621BD0FF6000D15FDC /* HttpHelper.swift in Sources */,
+				8C7C3D4E1C11E78000882467 /* ChatGroupTableViewCell.swift in Sources */,
 				8C7C3D421C105C4A00882467 /* StringExtension.swift in Sources */,
 				8C0B826F1BF5595A00D6CA10 /* JoinGroupTableViewController.swift in Sources */,
 				8C6E7A861C0F8C77001673B2 /* CALayerExtension.swift in Sources */,
