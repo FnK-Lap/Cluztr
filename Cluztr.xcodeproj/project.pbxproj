@@ -22,6 +22,7 @@
 		8C7C3D421C105C4A00882467 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D411C105C4A00882467 /* StringExtension.swift */; };
 		8C7C3D4C1C11D5A800882467 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */; };
 		8C7C3D4E1C11E78000882467 /* ChatGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */; };
+		8C7C3DB81C16671700882467 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8940781BC295F8009783AB /* TabBarViewController.swift */; };
 		8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */; };
 		8C96425A1BC4D342001982D3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9642591BC4D342001982D3 /* NotificationViewController.swift */; };
@@ -29,82 +30,83 @@
 		8C98A5CC1BC438ED00F621E0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C98A5CB1BC438ED00F621E0 /* UserModel.swift */; };
 		F11DDC001BE916EC008F88B4 /* GroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11DDBFF1BE916EC008F88B4 /* GroupRouter.swift */; };
 		F174E9621BD0FF6000D15FDC /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174E9611BD0FF6000D15FDC /* HttpHelper.swift */; };
-		F1B59E5B1BC7BC0A00BD76C8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B59E5A1BC7BC0A00BD76C8 /* SwiftyJSON.swift */; };
+		F1B59E5B1BC7BC0A00BD76C8 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		F1F865171C0FAAFB00DFCC34 /* InterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865161C0FAAFB00DFCC34 /* InterestViewController.swift */; };
 		F1F865211C0FB78D00DFCC34 /* InterestViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865201C0FB78D00DFCC34 /* InterestViewCell.swift */; };
 		F1F865251C14B5E600DFCC34 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865241C14B5E500DFCC34 /* HeaderReusableView.swift */; };
 		F1F865291C14F42200DFCC34 /* FooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865281C14F42200DFCC34 /* FooterReusableView.swift */; };
-		F1F865431C165F9D00DFCC34 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F865421C165F9D00DFCC34 /* FBSDKCoreKit.framework */; };
-		F1F865451C165FAD00DFCC34 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F865441C165FAD00DFCC34 /* FBSDKLoginKit.framework */; };
+		F1F8657B1C166A0A00DFCC34 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F8657A1C166A0A00DFCC34 /* SwiftyJSON.swift */; };
+		F1F865901C166A2200DFCC34 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F8658E1C166A2200DFCC34 /* FBSDKCoreKit.framework */; };
+		F1F865911C166A2200DFCC34 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F8658F1C166A2200DFCC34 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F1F865381C165F7600DFCC34 /* PBXContainerItemProxy */ = {
+		F1F865841C166A1400DFCC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1F865301C165F7600DFCC34 /* Alamofire.xcodeproj */;
+			containerPortal = F1F8657C1C166A1400DFCC34 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
-		F1F8653A1C165F7600DFCC34 /* PBXContainerItemProxy */ = {
+		F1F865861C166A1400DFCC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1F865301C165F7600DFCC34 /* Alamofire.xcodeproj */;
+			containerPortal = F1F8657C1C166A1400DFCC34 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
 			remoteInfo = "Alamofire OSX";
 		};
-		F1F8653C1C165F7600DFCC34 /* PBXContainerItemProxy */ = {
+		F1F865881C166A1400DFCC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1F865301C165F7600DFCC34 /* Alamofire.xcodeproj */;
+			containerPortal = F1F8657C1C166A1400DFCC34 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
 		};
-		F1F8653E1C165F7600DFCC34 /* PBXContainerItemProxy */ = {
+		F1F8658A1C166A1400DFCC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1F865301C165F7600DFCC34 /* Alamofire.xcodeproj */;
+			containerPortal = F1F8657C1C166A1400DFCC34 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS Tests";
 		};
-		F1F865401C165F7600DFCC34 /* PBXContainerItemProxy */ = {
+		F1F8658C1C166A1400DFCC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1F865301C165F7600DFCC34 /* Alamofire.xcodeproj */;
+			containerPortal = F1F8657C1C166A1400DFCC34 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
 			remoteInfo = "Alamofire OSX Tests";
 		};
-		F1F8654E1C165FB900DFCC34 /* PBXContainerItemProxy */ = {
+		F1F865AC1C166A4A00DFCC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1F865461C165FB900DFCC34 /* Locksmith.xcodeproj */;
+			containerPortal = F1F865A41C166A4A00DFCC34 /* Locksmith.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0EC25C591BA385AA004191AF;
 			remoteInfo = "Locksmith iOS";
 		};
-		F1F865501C165FB900DFCC34 /* PBXContainerItemProxy */ = {
+		F1F865AE1C166A4A00DFCC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1F865461C165FB900DFCC34 /* Locksmith.xcodeproj */;
+			containerPortal = F1F865A41C166A4A00DFCC34 /* Locksmith.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0EC25C621BA385AB004191AF;
 			remoteInfo = "Locksmith iOS Tests";
 		};
-		F1F865521C165FB900DFCC34 /* PBXContainerItemProxy */ = {
+		F1F865B01C166A4A00DFCC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1F865461C165FB900DFCC34 /* Locksmith.xcodeproj */;
+			containerPortal = F1F865A41C166A4A00DFCC34 /* Locksmith.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0EC25C751BA385F6004191AF;
 			remoteInfo = "Locksmith OS X";
 		};
-		F1F865541C165FB900DFCC34 /* PBXContainerItemProxy */ = {
+		F1F865B21C166A4A00DFCC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1F865461C165FB900DFCC34 /* Locksmith.xcodeproj */;
+			containerPortal = F1F865A41C166A4A00DFCC34 /* Locksmith.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0EC25C7E1BA385F6004191AF;
 			remoteInfo = "Locksmith OS X Tests";
 		};
-		F1F865561C165FB900DFCC34 /* PBXContainerItemProxy */ = {
+		F1F865B41C166A4A00DFCC34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = F1F865461C165FB900DFCC34 /* Locksmith.xcodeproj */;
+			containerPortal = F1F865A41C166A4A00DFCC34 /* Locksmith.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0EC25CA71BA39C9F004191AF;
 			remoteInfo = "Locksmith watchOS";
@@ -142,6 +144,7 @@
 		8C7C3D411C105C4A00882467 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGroupTableViewCell.swift; sourceTree = "<group>"; };
+		8C7C3D4F1C15DE9300882467 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		8C8940781BC295F8009783AB /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		8C9642591BC4D342001982D3 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -149,16 +152,15 @@
 		8C98A5CB1BC438ED00F621E0 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F11DDBFF1BE916EC008F88B4 /* GroupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupRouter.swift; sourceTree = "<group>"; };
 		F174E9611BD0FF6000D15FDC /* HttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpHelper.swift; sourceTree = "<group>"; };
-		F1B59E5A1BC7BC0A00BD76C8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../Downloads/SwiftyJSON-xcode7/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		F1F865161C0FAAFB00DFCC34 /* InterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestViewController.swift; sourceTree = "<group>"; };
 		F1F865201C0FB78D00DFCC34 /* InterestViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestViewCell.swift; sourceTree = "<group>"; };
 		F1F865241C14B5E500DFCC34 /* HeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 		F1F865281C14F42200DFCC34 /* FooterReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterReusableView.swift; sourceTree = "<group>"; };
-		F1F8652E1C165F6300DFCC34 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../Downloads/SwiftyJSON-xcode7/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
-		F1F865301C165F7600DFCC34 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
-		F1F865421C165F9D00DFCC34 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20151007/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
-		F1F865441C165FAD00DFCC34 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20151007/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
-		F1F865461C165FB900DFCC34 /* Locksmith.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Locksmith.xcodeproj; path = "../../../Downloads/Locksmith-master/Locksmith.xcodeproj"; sourceTree = "<group>"; };
+		F1F8657A1C166A0A00DFCC34 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../Downloads/SwiftyJSON-xcode7/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
+		F1F8657C1C166A1400DFCC34 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		F1F8658E1C166A2200DFCC34 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20151007/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		F1F8658F1C166A2200DFCC34 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20151007/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		F1F865A41C166A4A00DFCC34 /* Locksmith.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Locksmith.xcodeproj; path = "../../../Downloads/Locksmith-master/Locksmith.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,8 +168,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1F865431C165F9D00DFCC34 /* FBSDKCoreKit.framework in Frameworks */,
-				F1F865451C165FAD00DFCC34 /* FBSDKLoginKit.framework in Frameworks */,
+				F1F865901C166A2200DFCC34 /* FBSDKCoreKit.framework in Frameworks */,
+				F1F865911C166A2200DFCC34 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +229,7 @@
 				F1F865281C14F42200DFCC34 /* FooterReusableView.swift */,
 				8C6E7A921C0F9B0E001673B2 /* InvitationViewController.swift */,
 				8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */,
+				8C7C3D4F1C15DE9300882467 /* MessageViewController.swift */,
 			);
 			path = Cluztr;
 			sourceTree = "<group>";
@@ -243,11 +246,11 @@
 		8C89407C1BC2A877009783AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F1F865301C165F7600DFCC34 /* Alamofire.xcodeproj */,
-				F1F8652E1C165F6300DFCC34 /* SwiftyJSON.swift */,
-				F1F865421C165F9D00DFCC34 /* FBSDKCoreKit.framework */,
-				F1F865441C165FAD00DFCC34 /* FBSDKLoginKit.framework */,
-				F1F865461C165FB900DFCC34 /* Locksmith.xcodeproj */,
+				F1F8657A1C166A0A00DFCC34 /* SwiftyJSON.swift */,
+				F1F865A41C166A4A00DFCC34 /* Locksmith.xcodeproj */,
+				F1F8657C1C166A1400DFCC34 /* Alamofire.xcodeproj */,
+				F1F8658E1C166A2200DFCC34 /* FBSDKCoreKit.framework */,
+				F1F8658F1C166A2200DFCC34 /* FBSDKLoginKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -277,26 +280,26 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
-		F1F865311C165F7600DFCC34 /* Products */ = {
+		F1F8657D1C166A1400DFCC34 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1F865391C165F7600DFCC34 /* Alamofire.framework */,
-				F1F8653B1C165F7600DFCC34 /* Alamofire.framework */,
-				F1F8653D1C165F7600DFCC34 /* Alamofire.framework */,
-				F1F8653F1C165F7600DFCC34 /* Alamofire iOS Tests.xctest */,
-				F1F865411C165F7600DFCC34 /* Alamofire OSX Tests.xctest */,
+				F1F865851C166A1400DFCC34 /* Alamofire.framework */,
+				F1F865871C166A1400DFCC34 /* Alamofire.framework */,
+				F1F865891C166A1400DFCC34 /* Alamofire.framework */,
+				F1F8658B1C166A1400DFCC34 /* Alamofire iOS Tests.xctest */,
+				F1F8658D1C166A1400DFCC34 /* Alamofire OSX Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F1F865471C165FB900DFCC34 /* Products */ = {
+		F1F865A51C166A4A00DFCC34 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1F8654F1C165FB900DFCC34 /* Locksmith.framework */,
-				F1F865511C165FB900DFCC34 /* Locksmith iOS Tests.xctest */,
-				F1F865531C165FB900DFCC34 /* Locksmith.framework */,
-				F1F865551C165FB900DFCC34 /* Locksmith OS X Tests.xctest */,
-				F1F865571C165FB900DFCC34 /* Locksmith.framework */,
+				F1F865AD1C166A4A00DFCC34 /* Locksmith.framework */,
+				F1F865AF1C166A4A00DFCC34 /* Locksmith iOS Tests.xctest */,
+				F1F865B11C166A4A00DFCC34 /* Locksmith.framework */,
+				F1F865B31C166A4A00DFCC34 /* Locksmith OS X Tests.xctest */,
+				F1F865B51C166A4A00DFCC34 /* Locksmith.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -349,12 +352,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = F1F865311C165F7600DFCC34 /* Products */;
-					ProjectRef = F1F865301C165F7600DFCC34 /* Alamofire.xcodeproj */;
+					ProductGroup = F1F8657D1C166A1400DFCC34 /* Products */;
+					ProjectRef = F1F8657C1C166A1400DFCC34 /* Alamofire.xcodeproj */;
 				},
 				{
-					ProductGroup = F1F865471C165FB900DFCC34 /* Products */;
-					ProjectRef = F1F865461C165FB900DFCC34 /* Locksmith.xcodeproj */;
+					ProductGroup = F1F865A51C166A4A00DFCC34 /* Products */;
+					ProjectRef = F1F865A41C166A4A00DFCC34 /* Locksmith.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -365,74 +368,74 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		F1F865391C165F7600DFCC34 /* Alamofire.framework */ = {
+		F1F865851C166A1400DFCC34 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = F1F865381C165F7600DFCC34 /* PBXContainerItemProxy */;
+			remoteRef = F1F865841C166A1400DFCC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F1F8653B1C165F7600DFCC34 /* Alamofire.framework */ = {
+		F1F865871C166A1400DFCC34 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = F1F8653A1C165F7600DFCC34 /* PBXContainerItemProxy */;
+			remoteRef = F1F865861C166A1400DFCC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F1F8653D1C165F7600DFCC34 /* Alamofire.framework */ = {
+		F1F865891C166A1400DFCC34 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = F1F8653C1C165F7600DFCC34 /* PBXContainerItemProxy */;
+			remoteRef = F1F865881C166A1400DFCC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F1F8653F1C165F7600DFCC34 /* Alamofire iOS Tests.xctest */ = {
+		F1F8658B1C166A1400DFCC34 /* Alamofire iOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Alamofire iOS Tests.xctest";
-			remoteRef = F1F8653E1C165F7600DFCC34 /* PBXContainerItemProxy */;
+			remoteRef = F1F8658A1C166A1400DFCC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F1F865411C165F7600DFCC34 /* Alamofire OSX Tests.xctest */ = {
+		F1F8658D1C166A1400DFCC34 /* Alamofire OSX Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Alamofire OSX Tests.xctest";
-			remoteRef = F1F865401C165F7600DFCC34 /* PBXContainerItemProxy */;
+			remoteRef = F1F8658C1C166A1400DFCC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F1F8654F1C165FB900DFCC34 /* Locksmith.framework */ = {
+		F1F865AD1C166A4A00DFCC34 /* Locksmith.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Locksmith.framework;
-			remoteRef = F1F8654E1C165FB900DFCC34 /* PBXContainerItemProxy */;
+			remoteRef = F1F865AC1C166A4A00DFCC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F1F865511C165FB900DFCC34 /* Locksmith iOS Tests.xctest */ = {
+		F1F865AF1C166A4A00DFCC34 /* Locksmith iOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Locksmith iOS Tests.xctest";
-			remoteRef = F1F865501C165FB900DFCC34 /* PBXContainerItemProxy */;
+			remoteRef = F1F865AE1C166A4A00DFCC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F1F865531C165FB900DFCC34 /* Locksmith.framework */ = {
+		F1F865B11C166A4A00DFCC34 /* Locksmith.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Locksmith.framework;
-			remoteRef = F1F865521C165FB900DFCC34 /* PBXContainerItemProxy */;
+			remoteRef = F1F865B01C166A4A00DFCC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F1F865551C165FB900DFCC34 /* Locksmith OS X Tests.xctest */ = {
+		F1F865B31C166A4A00DFCC34 /* Locksmith OS X Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Locksmith OS X Tests.xctest";
-			remoteRef = F1F865541C165FB900DFCC34 /* PBXContainerItemProxy */;
+			remoteRef = F1F865B21C166A4A00DFCC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		F1F865571C165FB900DFCC34 /* Locksmith.framework */ = {
+		F1F865B51C166A4A00DFCC34 /* Locksmith.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Locksmith.framework;
-			remoteRef = F1F865561C165FB900DFCC34 /* PBXContainerItemProxy */;
+			remoteRef = F1F865B41C166A4A00DFCC34 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -457,7 +460,7 @@
 			files = (
 				8C96425A1BC4D342001982D3 /* NotificationViewController.swift in Sources */,
 				8C4511031BBE92F9004BDC9A /* SecondViewController.swift in Sources */,
-				F1B59E5B1BC7BC0A00BD76C8 /* SwiftyJSON.swift in Sources */,
+				F1B59E5B1BC7BC0A00BD76C8 /* (null) in Sources */,
 				F1F865291C14F42200DFCC34 /* FooterReusableView.swift in Sources */,
 				F1F865211C0FB78D00DFCC34 /* InterestViewCell.swift in Sources */,
 				F1F865171C0FAAFB00DFCC34 /* InterestViewController.swift in Sources */,
@@ -466,6 +469,8 @@
 				8C4ED9631BE835D9008962A1 /* SelectGroupViewController.swift in Sources */,
 				8C98A5CC1BC438ED00F621E0 /* UserModel.swift in Sources */,
 				8C0B82721BF55A0500D6CA10 /* JoinGroupTableViewCell.swift in Sources */,
+				F1F8657B1C166A0A00DFCC34 /* SwiftyJSON.swift in Sources */,
+				8C7C3DB81C16671700882467 /* (null) in Sources */,
 				F1F865251C14B5E600DFCC34 /* HeaderReusableView.swift in Sources */,
 				8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */,
 				8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */,
