@@ -596,7 +596,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/FnK/Documents/_PFE/Frameworks/**",
+					"/Users/FnK/Downloads/**",
 					"/Users/Stick/Downloads/**",
 				);
 				INFOPLIST_FILE = Cluztr/Info.plist;
@@ -613,7 +613,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
-					"/Users/FnK/Documents/_PFE/Frameworks/**",
+					"/Users/FnK/Downloads/**",
 					"/Users/Stick/Downloads/**",
 				);
 				INFOPLIST_FILE = Cluztr/Info.plist;
