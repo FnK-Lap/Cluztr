@@ -34,7 +34,6 @@
 		F1F865211C0FB78D00DFCC34 /* InterestViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865201C0FB78D00DFCC34 /* InterestViewCell.swift */; };
 		F1F865251C14B5E600DFCC34 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865241C14B5E500DFCC34 /* HeaderReusableView.swift */; };
 		F1F865291C14F42200DFCC34 /* FooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865281C14F42200DFCC34 /* FooterReusableView.swift */; };
-		F1F8652F1C165F6300DFCC34 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F8652E1C165F6300DFCC34 /* SwiftyJSON.swift */; };
 		F1F865431C165F9D00DFCC34 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F865421C165F9D00DFCC34 /* FBSDKCoreKit.framework */; };
 		F1F865451C165FAD00DFCC34 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1F865441C165FAD00DFCC34 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
@@ -329,7 +328,7 @@
 		8C4510F31BBE92F9004BDC9A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Cluztr;
 				TargetAttributes = {
 					8C4510FA1BBE92F9004BDC9A = {
@@ -466,7 +465,6 @@
 				8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */,
 				8C4ED9631BE835D9008962A1 /* SelectGroupViewController.swift in Sources */,
 				8C98A5CC1BC438ED00F621E0 /* UserModel.swift in Sources */,
-				F1F8652F1C165F6300DFCC34 /* SwiftyJSON.swift in Sources */,
 				8C0B82721BF55A0500D6CA10 /* JoinGroupTableViewCell.swift in Sources */,
 				F1F865251C14B5E600DFCC34 /* HeaderReusableView.swift in Sources */,
 				8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */,
