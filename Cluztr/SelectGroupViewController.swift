@@ -44,9 +44,11 @@ class SelectGroupViewController: UIViewController {
             success: { json in
                print("success \(json)")
                 if json["status"] == 201 {
-                    let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
-                    startViewController?.user = json["user"]
-                    self.presentViewController(startViewController!, animated: true, completion: nil)
+//                    let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
+//                    startViewController?.user = json["user"]
+//                    self.presentViewController(startViewController!, animated: true, completion: nil)
+                    self.performSegueWithIdentifier("InterestSegue", sender: nil)
+
                 }
             },
             errors: { json in

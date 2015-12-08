@@ -32,6 +32,10 @@
 		F1B59E5B1BC7BC0A00BD76C8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B59E5A1BC7BC0A00BD76C8 /* SwiftyJSON.swift */; };
 		F1B59E6E1BC7BC2100BD76C8 /* Locksmith.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E651BC7BC1A00BD76C8 /* Locksmith.framework */; };
 		F1B59E6F1BC7BC2100BD76C8 /* Locksmith.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F1B59E651BC7BC1A00BD76C8 /* Locksmith.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F1F865171C0FAAFB00DFCC34 /* InterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865161C0FAAFB00DFCC34 /* InterestViewController.swift */; };
+		F1F865211C0FB78D00DFCC34 /* InterestViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865201C0FB78D00DFCC34 /* InterestViewCell.swift */; };
+		F1F865251C14B5E600DFCC34 /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865241C14B5E500DFCC34 /* HeaderReusableView.swift */; };
+		F1F865291C14F42200DFCC34 /* FooterReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F865281C14F42200DFCC34 /* FooterReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +166,10 @@
 		F1B59E441BC7BBC200BD76C8 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		F1B59E5A1BC7BC0A00BD76C8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../Downloads/SwiftyJSON-xcode7/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		F1B59E5C1BC7BC1A00BD76C8 /* Locksmith.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Locksmith.xcodeproj; path = "../../../Downloads/Locksmith-master/Locksmith.xcodeproj"; sourceTree = "<group>"; };
+		F1F865161C0FAAFB00DFCC34 /* InterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestViewController.swift; sourceTree = "<group>"; };
+		F1F865201C0FB78D00DFCC34 /* InterestViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestViewCell.swift; sourceTree = "<group>"; };
+		F1F865241C14B5E500DFCC34 /* HeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
+		F1F865281C14F42200DFCC34 /* FooterReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +235,10 @@
 				8C96425F1BC4D3B9001982D3 /* ChatViewController.swift */,
 				8C4ED9621BE835D9008962A1 /* SelectGroupViewController.swift */,
 				8C0B826E1BF5595A00D6CA10 /* JoinGroupTableViewController.swift */,
+				F1F865161C0FAAFB00DFCC34 /* InterestViewController.swift */,
+				F1F865201C0FB78D00DFCC34 /* InterestViewCell.swift */,
+				F1F865241C14B5E500DFCC34 /* HeaderReusableView.swift */,
+				F1F865281C14F42200DFCC34 /* FooterReusableView.swift */,
 			);
 			path = Cluztr;
 			sourceTree = "<group>";
@@ -450,10 +462,14 @@
 				8C4511031BBE92F9004BDC9A /* SecondViewController.swift in Sources */,
 				8C9642601BC4D3B9001982D3 /* ChatViewController.swift in Sources */,
 				F1B59E5B1BC7BC0A00BD76C8 /* SwiftyJSON.swift in Sources */,
+				F1F865291C14F42200DFCC34 /* FooterReusableView.swift in Sources */,
+				F1F865211C0FB78D00DFCC34 /* InterestViewCell.swift in Sources */,
+				F1F865171C0FAAFB00DFCC34 /* InterestViewController.swift in Sources */,
 				8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */,
 				8C4ED9631BE835D9008962A1 /* SelectGroupViewController.swift in Sources */,
 				8C98A5CC1BC438ED00F621E0 /* UserModel.swift in Sources */,
 				8C0B82721BF55A0500D6CA10 /* JoinGroupTableViewCell.swift in Sources */,
+				F1F865251C14B5E600DFCC34 /* HeaderReusableView.swift in Sources */,
 				8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */,
 				8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */,
 				8C98A5B11BC4266C00F621E0 /* UserRouter.swift in Sources */,

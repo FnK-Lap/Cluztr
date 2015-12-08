@@ -9,5 +9,6 @@
 import UIKit
 
 class InterestViewCell: UICollectionViewCell {
-    
+    @IBOutlet weak var interestImage: UIImageView!
+    @IBOutlet weak var interestTitle: UILabel!
 }

@@ -9,5 +9,6 @@
 import UIKit
 
 class InterestHeaderReusableView: UICollectionReusableView {
-        
+//    @IBOutlet weak var headerTitle: UILabel!
+    
 }

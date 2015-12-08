@@ -19,7 +19,6 @@ class HttpHelper {
     func request(request : URLRequestConvertible, success: JSON -> Void, errors: JSON -> Void ) -> Void {
         Alamofire.request(request).responseJSON { response in
             if let data = response.result.value {
-                print(data)
                 let json = JSON(data)
                 if json["status"] == 200 || json["status"] == 201 {
                     success(json)

@@ -81,9 +81,10 @@ class JoinGroupTableViewController: UITableViewController {
             HttpHelper().request(GroupRouter.Join(group["_id"]),
                 success: {json in
                     print(json)
-                    let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
-                    startViewController?.user = json["user"]
-                    self.presentViewController(startViewController!, animated: true, completion: nil)
+                    self.performSegueWithIdentifier("InterestSegue", sender: nil)
+//                    let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
+//                    startViewController?.user = json["user"]
+//                    self.presentViewController(startViewController!, animated: true, completion: nil)
                 },
                 errors: {json in
                     print(json)

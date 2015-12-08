@@ -9,5 +9,5 @@
 import UIKit
 
 class FooterReusableView: UICollectionReusableView {
-        
+    @IBOutlet weak var buttonLabel: UIButton!
 }

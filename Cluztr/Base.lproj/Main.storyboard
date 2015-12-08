@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dBh-Oh-a63">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dBh-Oh-a63">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -382,7 +382,7 @@ groupe Cluztr.</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UeZ-Ql-76s" kind="show" id="oH5-DO-zam"/>
+                                    <segue destination="UeZ-Ql-76s" kind="show" identifier="Start" id="woV-3n-WVy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -416,11 +416,143 @@ groupe Cluztr.</string>
                     <connections>
                         <outlet property="createGroupButton" destination="9gR-QD-X13" id="dRB-DJ-w95"/>
                         <outlet property="joinGroupButton" destination="zm2-KF-eQc" id="Y94-AW-y5v"/>
+                        <segue destination="R7Q-Ia-HuU" kind="show" identifier="InterestSegue" id="ADg-12-cAL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPR-Te-Riy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="-1273"/>
+        </scene>
+        <!--Interest View Controller-->
+        <scene sceneID="fSS-Cm-jbR">
+            <objects>
+                <collectionViewController id="R7Q-Ia-HuU" customClass="InterestViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="k89-d6-AAC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="0.0" id="ung-0b-unf">
+                            <size key="itemSize" width="80" height="80"/>
+                            <size key="headerReferenceSize" width="50" height="110"/>
+                            <size key="footerReferenceSize" width="50" height="104"/>
+                            <inset key="sectionInset" minX="0.0" minY="20" maxX="0.0" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="lbR-kg-3w7" customClass="InterestViewCell" customModule="Cluztr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="174" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UN9-vg-VQF">
+                                            <rect key="frame" x="20" y="8" width="40" height="40"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="40" id="lPX-xc-TVW"/>
+                                                <constraint firstAttribute="height" constant="40" id="wYq-xB-PmZ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wyx-y9-HLj">
+                                            <rect key="frame" x="22" y="55" width="36" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="UN9-vg-VQF" firstAttribute="top" secondItem="lbR-kg-3w7" secondAttribute="top" constant="8" id="FaG-xU-bW2"/>
+                                    <constraint firstItem="UN9-vg-VQF" firstAttribute="centerX" secondItem="lbR-kg-3w7" secondAttribute="centerX" id="JdX-jj-GQW"/>
+                                    <constraint firstItem="wyx-y9-HLj" firstAttribute="centerX" secondItem="lbR-kg-3w7" secondAttribute="centerX" id="Nd3-yU-yke"/>
+                                    <constraint firstAttribute="bottom" secondItem="wyx-y9-HLj" secondAttribute="bottom" constant="8" id="TS9-O3-VQA"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="interestImage" destination="UN9-vg-VQF" id="CtI-LU-JLH"/>
+                                    <outlet property="interestTitle" destination="wyx-y9-HLj" id="TcF-vw-UTu"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderInterest" id="HgF-Tj-wT5" customClass="HeaderReusableView" customModule="Cluztr" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="44" width="600" height="110"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Centre d'intérêts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaf-q5-0yX">
+                                    <rect key="frame" x="222" y="18" width="157" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <color key="textColor" red="0.17254901960784313" green="0.67843137254901964" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Choisis 3 centre d'intérëts parmi toutes les propositions ci-dessous" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fx2-pr-aB0">
+                                    <rect key="frame" x="180" y="42" width="240" height="60"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="240" id="IFa-UH-sdQ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="fx2-pr-aB0" firstAttribute="top" secondItem="xaf-q5-0yX" secondAttribute="bottom" id="4j5-Fk-iQW"/>
+                                <constraint firstItem="xaf-q5-0yX" firstAttribute="top" secondItem="HgF-Tj-wT5" secondAttribute="topMargin" constant="10" id="CdF-8e-mt6"/>
+                                <constraint firstItem="fx2-pr-aB0" firstAttribute="bottom" secondItem="HgF-Tj-wT5" secondAttribute="bottomMargin" id="MZl-2j-2yE"/>
+                                <constraint firstItem="xaf-q5-0yX" firstAttribute="centerX" secondItem="HgF-Tj-wT5" secondAttribute="centerX" id="YGY-lf-Zoj"/>
+                                <constraint firstItem="fx2-pr-aB0" firstAttribute="centerX" secondItem="HgF-Tj-wT5" secondAttribute="centerX" id="aK3-3U-CNV"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="headerText" destination="fx2-pr-aB0" id="XnG-X4-4hx"/>
+                                <outlet property="titleLabel" destination="xaf-q5-0yX" id="zI8-Sn-Cs6"/>
+                            </connections>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FooterInterest" id="vnd-g9-IiF" customClass="FooterReusableView" customModule="Cluztr" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="264" width="600" height="104"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xu4-Eq-UYk">
+                                    <rect key="frame" x="200" y="34" width="200" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="cGs-9k-i2p"/>
+                                        <constraint firstAttribute="width" constant="200" id="xaa-Yk-GAk"/>
+                                    </constraints>
+                                    <state key="normal" title="Continuer">
+                                        <color key="titleColor" red="0.32941176470588235" green="0.41568627450980389" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <state key="disabled" title="Continuer">
+                                        <color key="titleColor" red="0.98299955650770154" green="0.98196719372984043" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                            <real key="value" value="1.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorFromUIColor">
+                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Xu4-Eq-UYk" firstAttribute="centerX" secondItem="vnd-g9-IiF" secondAttribute="centerX" id="jCj-ht-ToF"/>
+                                <constraint firstItem="Xu4-Eq-UYk" firstAttribute="centerY" secondItem="vnd-g9-IiF" secondAttribute="centerY" id="rY5-Rt-7Iv"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="buttonLabel" destination="Xu4-Eq-UYk" id="oWU-8b-B7O"/>
+                            </connections>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="R7Q-Ia-HuU" id="Y8O-RO-jpg"/>
+                            <outlet property="delegate" destination="R7Q-Ia-HuU" id="3Gx-SK-vN3"/>
+                        </connections>
+                    </collectionView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7nU-TK-SaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3124" y="-1279"/>
         </scene>
         <!--Join Group Table View Controller-->
         <scene sceneID="cyb-qw-XLz">
@@ -491,6 +623,7 @@ groupe Cluztr.</string>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
                                                 <action selector="joinButtonAction:" destination="UeZ-Ql-76s" eventType="touchUpInside" id="xQN-dj-5w8"/>
+                                                <segue destination="R7Q-Ia-HuU" kind="show" identifier="InterestSegue" id="IOx-kH-bPx"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -521,7 +654,7 @@ groupe Cluztr.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bU4-NM-gao" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2059" y="-1273"/>
+            <point key="canvasLocation" x="2046" y="-743"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="zPz-hi-F2l">
@@ -579,4 +712,7 @@ groupe Cluztr.</string>
         <image name="default_avatar" width="200" height="200"/>
         <image name="selectGroup" width="640" height="1136"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="IOx-kH-bPx"/>
+    </inferredMetricsTieBreakers>
 </document>

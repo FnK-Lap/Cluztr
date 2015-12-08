@@ -9,5 +9,7 @@
 import UIKit
 
 class HeaderReusableView: UICollectionReusableView {
+    @IBOutlet weak var titleLabel: UILabel!
         
+    @IBOutlet weak var headerText: UITextView!
 }
