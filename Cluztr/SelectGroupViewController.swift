@@ -40,22 +40,7 @@ class SelectGroupViewController: UIViewController {
     }
     
     @IBAction func createGroupButton(sender: AnyObject) {
-        HttpHelper().request(GroupRouter.CreateGroup(),
-            success: { json in
-                if json["status"] == 201 {
-//                    let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
-//                    startViewController?.user = json["user"]
-//                    self.presentViewController(startViewController!, animated: true, completion: nil)
-                    self.performSegueWithIdentifier("InterestSegue", sender: nil)
-
-                }
-            },
-            errors: { json in
-                let alertController = UIAlertController(title: "Erreur", message: "Une erreur est survenue", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
-                
-                self.presentViewController(alertController, animated: true, completion: nil)
-            })
+        self.performSegueWithIdentifier("InterestSegue", sender: nil)
     }
 
     /*

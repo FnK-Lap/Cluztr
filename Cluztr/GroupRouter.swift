@@ -16,7 +16,7 @@ enum GroupRouter: URLRequestConvertible {
     case CreateGroup()
     case GetGroup(JSON)
     case Invite(JSON, String)
-    case Join(JSON)
+    case Join(String)
     case GetChats(JSON)
     
     var method: Alamofire.Method {

@@ -11,6 +11,7 @@ import UIKit
 class JoinGroupTableViewController: UITableViewController {
     
     var invitations: JSON?
+    var groupId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,29 +72,12 @@ class JoinGroupTableViewController: UITableViewController {
     @IBAction func joinButtonAction(sender: AnyObject) {
         let button: UIButton = sender as! UIButton
         let invitation = self.invitations![button.tag]
-        let group = invitation["groupId"]
+        self.groupId = invitation["groupId"]["_id"].string!
         
         let alertController = UIAlertController(title: "Rejoindre groupe", message: "Voulez vous vraiment accepter l'invitation de \(invitation["userId"]["firstname"]) à rejoindre son groupe ?", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         alertController.addAction(UIAlertAction(title: "Rejoindre", style: UIAlertActionStyle.Destructive, handler: { (action: UIAlertAction) in
-            HttpHelper().request(GroupRouter.Join(group["_id"]),
-                success: {json in
-                    print(json)
-                    self.performSegueWithIdentifier("InterestSegue", sender: nil)
-                },
-                errors: {json in
-                    var errorMessage = "Une erreur est survenue"
-                    
-                    if (json["message"].string != nil) {
-                        errorMessage = json["message"].string!
-                    }
-                    
-                    let alertController = UIAlertController(title: "Erreur", message: "\(errorMessage)", preferredStyle: UIAlertControllerStyle.Alert)
-                    alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
-                    
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                }
-            )
+            self.performSegueWithIdentifier("InterestSegue", sender: nil)
         }))
         
         alertController.addAction(UIAlertAction(title: "Non", style: UIAlertActionStyle.Cancel, handler: nil ))
@@ -136,14 +120,18 @@ class JoinGroupTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "InterestSegue" {
+            let destinationVC = segue.destinationViewController as! InterestViewController
+            destinationVC.groupId = self.groupId
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }

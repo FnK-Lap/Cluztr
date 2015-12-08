@@ -10,6 +10,7 @@ import UIKit
 
 class InterestViewController: UICollectionViewController {
     
+    var groupId: String?
     var selectedInterest: Array<String> = []
     
     var footer: FooterReusableView?
@@ -156,9 +157,46 @@ class InterestViewController: UICollectionViewController {
             success: {json in
                 print("----------- Retour JSON save interests ------------")
                 print(json)
-                let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
-                startViewController?.user = json["data"]["user"]
-                self.presentViewController(startViewController!, animated: true, completion: nil)
+                print(self.groupId)
+                if (self.groupId != nil) {
+                    // Join Group
+                    HttpHelper().request(GroupRouter.Join(self.groupId!),
+                        success: {json in
+                            let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
+                            print(json)
+                            startViewController?.user = json["user"]
+                            self.presentViewController(startViewController!, animated: true, completion: nil)
+                        },
+                        errors: {json in
+                            var errorMessage = "Une erreur est survenue"
+                            
+                            if (json["message"].string != nil) {
+                                errorMessage = json["message"].string!
+                            }
+                            
+                            let alertController = UIAlertController(title: "Erreur", message: "\(errorMessage)", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        }
+                    )
+                } else {
+                    // Create Group
+                    HttpHelper().request(GroupRouter.CreateGroup(),
+                        success: { json in
+                            if json["status"] == 201 {
+                                let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
+                                startViewController?.user = json["data"]["user"]
+                                self.presentViewController(startViewController!, animated: true, completion: nil)
+                            }
+                        },
+                        errors: { json in
+                            let alertController = UIAlertController(title: "Erreur", message: "Une erreur est survenue", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                    })
+                }
             },
             errors: {error in
                 let alertController = UIAlertController(title: "Error Network", message: "\(error["message"])", preferredStyle: UIAlertControllerStyle.Alert)
