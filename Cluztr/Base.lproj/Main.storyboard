@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dBh-Oh-a63">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dBh-Oh-a63">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -343,7 +343,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="43" id="Ynh-LW-tra"/>
                                             </constraints>
-                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas, ligula non cursus lobortis, tortor justo consectetur odio, quis congue arcu felis non augue. Integer diam eros, rutrum sed varius sed, ultrices in lorem. Suspendisse nisi purus, tempus at iaculis nec, dignissim et nisl. Curabitur dapibus massa eu est finibus efficitur. Phasellus ultrices sapien quis arcu aliquet suscipit ut et purus. Praesent pretium maximus ligula, vel pulvinar enim ullamcorper eget. Nunc imperdiet, tellus id vestibulum dictum, est metus feugiat dui, eu convallis ex elit quis lectus.</mutableString>
+                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas, ligula non cursus lobortis, tortor justo consectetur odio, quis congue arcu felis non augue. Integer diam eros, rutrum sed varius sed, ultrices in lorem. Suspendisse nisi purus, tempus at iaculis nec, dignissim et nisl. Curabitur dapibus massa eu est finibus efficitur. Phasellus ultrices sapien quis arcu aliquet suscipit ut et purus. Praesent pretium maximus ligula, vel pulvinar enim ullamcorper eget. Nunc imperdiet, tellus id vestibulum dictum, est metus feugiat dui, eu convallis ex elit quis lectus.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -472,7 +472,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="43" id="ihn-NI-jqv"/>
                                             </constraints>
-                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas, ligula non cursus lobortis, tortor justo consectetur odio, quis congue arcu felis non augue. Integer diam eros, rutrum sed varius sed, ultrices in lorem. Suspendisse nisi purus, tempus at iaculis nec, dignissim et nisl. Curabitur dapibus massa eu est finibus efficitur. Phasellus ultrices sapien quis arcu aliquet suscipit ut et purus. Praesent pretium maximus ligula, vel pulvinar enim ullamcorper eget. Nunc imperdiet, tellus id vestibulum dictum, est metus feugiat dui, eu convallis ex elit quis lectus.</mutableString>
+                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas, ligula non cursus lobortis, tortor justo consectetur odio, quis congue arcu felis non augue. Integer diam eros, rutrum sed varius sed, ultrices in lorem. Suspendisse nisi purus, tempus at iaculis nec, dignissim et nisl. Curabitur dapibus massa eu est finibus efficitur. Phasellus ultrices sapien quis arcu aliquet suscipit ut et purus. Praesent pretium maximus ligula, vel pulvinar enim ullamcorper eget. Nunc imperdiet, tellus id vestibulum dictum, est metus feugiat dui, eu convallis ex elit quis lectus.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.78823529410000004" green="0.78823529410000004" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -531,7 +531,7 @@
         <!--Chat-->
         <scene sceneID="Kii-WI-Zi2">
             <objects>
-                <viewController title="Chat" id="GR6-x8-3MR" customClass="MessageViewController" customModule="Cluztr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Chat" id="GR6-x8-3MR" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iNr-Ox-MfB"/>
                         <viewControllerLayoutGuide type="bottom" id="Gyp-gB-snO"/>
@@ -1194,5 +1194,6 @@ groupe Cluztr.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IOx-kH-bPx"/>
+        <segue reference="UgN-jf-lxF"/>
     </inferredMetricsTieBreakers>
 </document>
