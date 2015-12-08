@@ -69,8 +69,6 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
                 }
             },
             errors: {error in
-                print("else")
-                
                 let alertController = UIAlertController(title: "Error Network", message: "\(error["message"])", preferredStyle: UIAlertControllerStyle.Alert)
                 alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
                 

@@ -16,14 +16,12 @@ class JoinGroupTableViewController: UITableViewController {
         super.viewDidLoad()
         HttpHelper().request(UserRouter.GetInvitations(),
             success: {json in
-                print(json)
                 if json["status"] == 200 {
                     self.invitations = json["data"]
                     self.tableView.reloadData()
                 }
             },
             errors: {json in
-                print(json)
                 let alertController = UIAlertController(title: "Erreur", message: "Une erreur est survenue", preferredStyle: UIAlertControllerStyle.Alert)
                 alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
                 
@@ -82,13 +80,8 @@ class JoinGroupTableViewController: UITableViewController {
                 success: {json in
                     print(json)
                     self.performSegueWithIdentifier("InterestSegue", sender: nil)
-//                    let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
-//                    startViewController?.user = json["user"]
-//                    self.presentViewController(startViewController!, animated: true, completion: nil)
                 },
                 errors: {json in
-                    print(json)
-                    
                     var errorMessage = "Une erreur est survenue"
                     
                     if (json["message"].string != nil) {

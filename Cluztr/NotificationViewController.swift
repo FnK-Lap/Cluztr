@@ -12,8 +12,6 @@ class NotificationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarItem.selectedImage = UIImage.init(named: "NotificationIconSelected")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        self.tabBarItem.image = UIImage.init(named: "NotificationIcon")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
