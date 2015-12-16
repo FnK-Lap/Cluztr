@@ -11,11 +11,12 @@ import UIKit
 class ChatTableViewController: UITableViewController {
     
     var chats:JSON?
+    var chatLoaded: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getChatFromAPI()
-        
+        self.chatLoaded = true
         
 
 
@@ -27,7 +28,9 @@ class ChatTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.getChatFromAPI()
+        if !self.chatLoaded {
+            self.getChatFromAPI()
+        }
     }
     
     func getChatFromAPI() {
@@ -80,6 +83,11 @@ class ChatTableViewController: UITableViewController {
         
         if self.chats != nil {
             cell.initUI(self.chats![indexPath.row])
+            print(indexPath)
+            print("--------- Cell ID ----------")
+            print(self.chats![indexPath.row]["_id"].string)
+            print("---------- END Cell ID ---------")
+            cell.chatId = self.chats![indexPath.row]["_id"].string
         }
         
         
@@ -126,8 +134,13 @@ class ChatTableViewController: UITableViewController {
     */
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedRow = tableView.cellForRowAtIndexPath(indexPath) as! ChatGroupTableViewCell
-        performSegueWithIdentifier("OwnChatMessageSegue", sender: selectedRow)
+        let selectedCell = tableView.cellForRowAtIndexPath(indexPath)
+        if indexPath.row == 0 {
+            performSegueWithIdentifier("OwnChatMessageSegue", sender: selectedCell)
+        } else {
+            performSegueWithIdentifier("OtherChatMessageSegue", sender: selectedCell)
+        }
+        
     }
 
 
@@ -135,7 +148,15 @@ class ChatTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destinationVC = segue.destinationViewController as! MessageViewController
+        let selectedCell = sender as! ChatGroupTableViewCell
+        
+        destinationVC.chatId = selectedCell.chatId
+        
         if segue.identifier == "OwnChatMessageSegue" {
+            destinationVC.isPrivate = true
+        } else if segue.identifier == "OtherChatMessageSegue" {
+            destinationVC.isPrivate = false
         }
     }
 

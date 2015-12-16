@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0A34B11C1F7F38000608AD /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0A34B01C1F7F38000608AD /* MessageTableViewCell.swift */; };
 		8C0B826F1BF5595A00D6CA10 /* JoinGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0B826E1BF5595A00D6CA10 /* JoinGroupTableViewController.swift */; };
 		8C0B82721BF55A0500D6CA10 /* JoinGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0B82711BF55A0500D6CA10 /* JoinGroupTableViewCell.swift */; };
 		8C4510FF1BBE92F9004BDC9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4510FE1BBE92F9004BDC9A /* AppDelegate.swift */; };
@@ -23,6 +24,8 @@
 		8C7C3D4C1C11D5A800882467 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */; };
 		8C7C3D4E1C11E78000882467 /* ChatGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */; };
 		8C7C3DB81C16671700882467 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		8C7C3DCC1C1714D600882467 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3DCB1C1714D600882467 /* MessageViewController.swift */; };
+		8C7C3DCE1C1717F900882467 /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3DCD1C1717F900882467 /* ChatRouter.swift */; };
 		8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8940781BC295F8009783AB /* TabBarViewController.swift */; };
 		8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */; };
 		8C96425A1BC4D342001982D3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9642591BC4D342001982D3 /* NotificationViewController.swift */; };
@@ -127,6 +130,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8C0A34B01C1F7F38000608AD /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		8C0B826E1BF5595A00D6CA10 /* JoinGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGroupTableViewController.swift; sourceTree = "<group>"; };
 		8C0B82711BF55A0500D6CA10 /* JoinGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGroupTableViewCell.swift; sourceTree = "<group>"; };
 		8C4510FB1BBE92F9004BDC9A /* Cluztr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cluztr.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +148,8 @@
 		8C7C3D411C105C4A00882467 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGroupTableViewCell.swift; sourceTree = "<group>"; };
+		8C7C3DCB1C1714D600882467 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		8C7C3DCD1C1717F900882467 /* ChatRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
 		8C8940781BC295F8009783AB /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		8C89407A1BC29AD4009783AB /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		8C9642591BC4D342001982D3 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 			children = (
 				8C0B82711BF55A0500D6CA10 /* JoinGroupTableViewCell.swift */,
 				8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */,
+				8C0A34B01C1F7F38000608AD /* MessageTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -228,6 +235,7 @@
 				F1F865281C14F42200DFCC34 /* FooterReusableView.swift */,
 				8C6E7A921C0F9B0E001673B2 /* InvitationViewController.swift */,
 				8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */,
+				8C7C3DCB1C1714D600882467 /* MessageViewController.swift */,
 			);
 			path = Cluztr;
 			sourceTree = "<group>";
@@ -258,6 +266,7 @@
 			children = (
 				8C98A5B01BC4266C00F621E0 /* UserRouter.swift */,
 				F11DDBFF1BE916EC008F88B4 /* GroupRouter.swift */,
+				8C7C3DCD1C1717F900882467 /* ChatRouter.swift */,
 			);
 			name = Routers;
 			sourceTree = "<group>";
@@ -457,8 +466,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C96425A1BC4D342001982D3 /* NotificationViewController.swift in Sources */,
+				8C7C3DCC1C1714D600882467 /* MessageViewController.swift in Sources */,
 				8C4511031BBE92F9004BDC9A /* SecondViewController.swift in Sources */,
 				F1B59E5B1BC7BC0A00BD76C8 /* (null) in Sources */,
+				8C0A34B11C1F7F38000608AD /* MessageTableViewCell.swift in Sources */,
 				F1F865291C14F42200DFCC34 /* FooterReusableView.swift in Sources */,
 				F1F865211C0FB78D00DFCC34 /* InterestViewCell.swift in Sources */,
 				F1F865171C0FAAFB00DFCC34 /* InterestViewController.swift in Sources */,
@@ -475,6 +486,7 @@
 				8C98A5B11BC4266C00F621E0 /* UserRouter.swift in Sources */,
 				F11DDC001BE916EC008F88B4 /* GroupRouter.swift in Sources */,
 				8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */,
+				8C7C3DCE1C1717F900882467 /* ChatRouter.swift in Sources */,
 				8C4511011BBE92F9004BDC9A /* GroupViewController.swift in Sources */,
 				F174E9621BD0FF6000D15FDC /* HttpHelper.swift in Sources */,
 				8C7C3D4E1C11E78000882467 /* ChatGroupTableViewCell.swift in Sources */,
