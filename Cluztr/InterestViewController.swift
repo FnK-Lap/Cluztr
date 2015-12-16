@@ -186,7 +186,7 @@ class InterestViewController: UICollectionViewController {
                         success: { json in
                             if json["status"] == 201 {
                                 let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
-                                startViewController?.user = json["data"]["user"]
+                                startViewController?.user = json["user"]
                                 self.presentViewController(startViewController!, animated: true, completion: nil)
                             }
                         },
