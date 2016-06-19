@@ -150,6 +150,10 @@ class InterestViewController: UICollectionViewController {
                 
                 assert(false, "Unexpected element kind")
             }
+            
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "HeaderInterest", forIndexPath: indexPath) as! HeaderReusableView
+            
+            return headerView
     }
     
     func saveInterest(sender: UIButton!) {

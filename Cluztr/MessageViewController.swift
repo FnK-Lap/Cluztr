@@ -8,9 +8,13 @@
 
 import UIKit
 
+
 class MessageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
     
-
+    @IBOutlet weak var dockHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dockMaxHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomTextViewConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var dock: UIView!
 
@@ -23,7 +27,17 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     var chatId:String?
     var isPrivate:Bool = true
     var messages: Array<JSON> = []
-
+    let socket = SocketIOClient(socketURL: NSURL(string: "https://cluztr.herokuapp.com")!, options: [.Log(false), .ForcePolling(false)])
+    
+    @IBAction func sendMessageButton(sender: AnyObject) {
+        print("Message Send")
+        let tabBarController = self.tabBarController as! TabBarViewController
+        let userId = tabBarController.user!["_id"]
+        socket.emit("private message", "\(chatId!)", "\(userId)", "\(self.textView.text)")
+        self.textView.text = "";
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -32,12 +46,14 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.estimatedRowHeight = 50
         tableView.separatorColor = UIColor.clearColor()
         
-        textView.delegate = self
+        self.textView.delegate = self
         textView.layer.borderWidth = 1.0;
         textView.layer.borderColor = UIColor.lightGrayColor().CGColor
         textView.layer.cornerRadius = 6;
         textView.textColor = UIColor.lightGrayColor();
-        textView.text = "Place Holder"
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasShown:", name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWasHidden:", name: UIKeyboardDidHideNotification, object: nil)
         
         
         print("---------------- SELF CHATID -------------")
@@ -48,68 +64,55 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let chatId = self.chatId {
             getChat(chatId)
         }
+        
+        socket.connect()
+        
+        socket.on(chatId!) { data, ack in
+            print("new Message")
+            let json = JSON(data[0])
+            print("\(json["message"])")
+            self.messages += [json["message"]]
+            self.tableView.reloadData()
+            self.scrollToLastRow();
+            print(self.messages)
+        }
         // Do any additional setup after loading the view.
     }
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        self.returnPressed += 1
-        if self.returnPressed > 17 {
-            self.textView.frame = CGRectMake(8, 8, self.textView.frame.size.width, self.textView.frame.size.height + 17)
-            self.newLine = CGFloat(17) * CGFloat(returnPressed)
-            UIView.animateWithDuration(0.1, animations: { () -> Void in
-                self.dock.transform = CGAffineTransformMakeTranslation(0, -250 - self.newLine)
-            })
-        }
-        return true
-    }
     
-    func textViewDidChange(textView: UITextView) {
-        let pos:UITextPosition = self.textView.endOfDocument
-        
-        let currentRect:CGRect = self.textView.caretRectForPosition(pos)
-        
-        if currentRect.origin.y > self.previousRect.origin.y || self.textView.text == "\n" {
-            self.returnPressed += 1
-            if self.returnPressed < 17 && self.returnPressed > 1 {
-//                self.textView.frame = CGRectMake(8, 8, self.textView.frame.size.width, self.textView.frame.size.height + 17)
-//                self.newLine = CGFloat(17) * CGFloat(self.returnPressed)
-//                UIView.animateWithDuration(0.1, animations: { () -> Void in
-//                    self.dock.transform = CGAffineTransformMakeTranslation(0, -250 - self.newLine)
-//                })
+    func textViewDidChange(textView: UITextView)
+    {
+        let oldHeight : CGFloat = textView.frame.size.height
+        let fixedWidth : CGFloat = textView.frame.size.width
+        let newSize : CGSize = textView.sizeThatFits(CGSizeMake(fixedWidth, CGFloat(MAXFLOAT)))
+        var newFrame : CGRect = CGRectMake(8, 8, textView.frame.width, textView.frame.height)
+        newFrame.size = CGSizeMake(CGFloat(fmaxf((Float)(newSize.width), (Float)(fixedWidth))),newSize.height)
+        print(self.dockHeightConstraint.constant + (newSize.height - oldHeight))
+        self.dockHeightConstraint.constant += (newSize.height - oldHeight)
+        if self.dockHeightConstraint.constant < self.dockMaxHeightConstraint.constant {
+            
+
+            textView.frame = newFrame
+        } else {
+            if textView.frame.height > newFrame.height {
+                textView.frame = newFrame
             }
         }
-        self.previousRect = currentRect
     }
     
-    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
-        if self.textView.text == "" || self.textView.text == "Place Holder" {
-            self.textView.text = ""
+    func keyboardWasShown(notification: NSNotification) {
+        var info = notification.userInfo!
+        var keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        
+        UIView.animateWithDuration(0.1) { () -> Void in
+            self.bottomTextViewConstraint.constant = keyboardFrame.size.height - 50
         }
-        
-        self.textView.textColor = UIColor.blackColor()
-//        UIView.animateWithDuration(0.209, animations: { () -> Void in
-//            self.dock.transform = CGAffineTransformMakeTranslation(0, -250 - self.newLine)
-//        })
-        
-        return true
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-//        let touch:UITouch = [touches:AnyObject]
-//        if touch.phase == UITouchPhase.Began {
-//            self.textView.resignFirstResponder()
-//            self.view.endEditing(true)
-//            let height:Int = self.returnPressed * 20
-//            
-//            UIView.animateWithDuration(0.209, animations: { () -> Void in
-//                self.dock.transform = CGAffineTransformMakeTranslation(0, -CGFloat(height))
-//            })
-//            
-//            if self.textView.text == "" {
-//                self.textView.textColor = UIColor.lightGrayColor()
-//                self.textView.text = "Place Holder"
-//            }
-//        }
+    func keyboardWasHidden(notification: NSNotification) {
+        UIView.animateWithDuration(0.1) { () -> Void in
+            self.bottomTextViewConstraint.constant = 8
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -124,6 +127,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print("-------------- Print Count JSON response Get Chat --------------")
                 print(self.messages.count)
                 self.tableView.reloadData();
+                self.scrollToLastRow();
                 print("-------------- FIN Count Print JSON response Get Chat --------------")
             },
             errors: {error in
@@ -136,6 +140,13 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     }
     
+    func scrollToLastRow() {
+        if self.messages.count > 1 {
+            let indexPath = NSIndexPath(forRow: self.messages.count - 1, inSection: 0)
+            self.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Top, animated: true)
+        }
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messages.count
     }
@@ -145,19 +156,25 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("LeftChatCell", forIndexPath: indexPath) as! MessageTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("LeftChatCell", forIndexPath: indexPath) as! MessageTableViewCell
         let tabBarController = self.tabBarController as! TabBarViewController
         let user = tabBarController.user
         
         let message = self.messages[indexPath.row]
         
         if self.isPrivate, let userId = user!["_id"].string {
-            if userId == message["user"]["_id"].string {
+            
+            
+            if userId == (message["user"]["_id"].string != nil ? message["user"]["_id"].string : message["user"].string) {
                 cell.rightLabel.text = message["message"].string
+                cell.leftLabel.text = ""
                 cell.leftLabelView.hidden = true
+                cell.rightLabelView.hidden = false
             } else {
                 cell.leftLabel.text = message["message"].string
+                cell.rightLabel.text = ""
                 cell.rightLabelView.hidden = true
+                cell.leftLabelView.hidden = false
             }
         }
         

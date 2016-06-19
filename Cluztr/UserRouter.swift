@@ -11,7 +11,7 @@ import Alamofire
 import Locksmith
 
 enum UserRouter: URLRequestConvertible {
-    static let baseURLString = "http://localhost:3000"
+    static let baseURLString = "https://cluztr.herokuapp.com"
     
     case LoginUser([String: AnyObject])
     case GetInvitations()

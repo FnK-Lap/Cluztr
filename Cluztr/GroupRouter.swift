@@ -11,7 +11,7 @@ import Alamofire
 import Locksmith
 
 enum GroupRouter: URLRequestConvertible {
-    static let baseURLString = "http://localhost:3000/api/v1"
+    static let baseURLString = "https://cluztr.herokuapp.com/api/v1"
     
     case CreateGroup()
     case GetGroup(JSON)

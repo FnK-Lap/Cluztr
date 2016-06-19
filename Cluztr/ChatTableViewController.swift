@@ -16,7 +16,6 @@ class ChatTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getChatFromAPI()
-        self.chatLoaded = true
         
 
 
@@ -28,9 +27,7 @@ class ChatTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        if !self.chatLoaded {
-            self.getChatFromAPI()
-        }
+        self.getChatFromAPI()
     }
     
     func getChatFromAPI() {
@@ -40,6 +37,8 @@ class ChatTableViewController: UITableViewController {
         HttpHelper().request(GroupRouter.GetChats(groupId),
             success: {json in
                 self.chats = json["data"]
+                print("==========")
+                print(self.chats)
                 self.tableView.reloadData();
             },
             errors: {error in
