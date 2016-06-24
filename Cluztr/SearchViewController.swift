@@ -11,11 +11,18 @@ import FBSDKLoginKit
 import Locksmith
 import MapKit
 
-class SearchViewController: UIViewController, CLLocationManagerDelegate {
+class SearchViewController: UIViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate  {
 
     @IBOutlet weak var MapView: MKMapView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var listGroups: JSON?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
+        self.setMapView()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -35,6 +42,41 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
         self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func searchMode(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.setMapView()
+        case 1:
+            self.setListView()
+        default:
+            break
+        }
+    }
+    
+    func setListView() {
+        MapView.hidden = true
+        tableView.hidden = false
+        HttpHelper().request(GroupRouter.GetGroups(),
+            success: {json in
+                // User Login
+                self.listGroups = json["data"]
+                self.tableView.reloadData()
+            },
+            errors: {error in
+                print("Erreur HTTP get groups | \(error)")
+                let alertController = UIAlertController(title: "Error Network", message: "\(error["message"])", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        )
+    }
+    
+    func setMapView() {
+        MapView.hidden = false
+        tableView.hidden = true
     }
     
     let regionRadius: CLLocationDistance = 1000
@@ -67,6 +109,79 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, 500, 500)
         MapView.setRegion(coordinateRegion, animated: true)
     }
+    
+    // MARK: - TableView Datasource
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let count = self.listGroups?.count {
+            return count
+        }
+        
+        return 0
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("listGroupCell") as! ListGroupTableViewCell
+        let group = self.listGroups![indexPath.row]
+        cell.initUI(group)
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView,
+        willDisplayCell cell: UITableViewCell,
+        forRowAtIndexPath indexPath: NSIndexPath) {
+            
+            guard let tableViewCell = cell as? ListGroupTableViewCell else { return }
+            
+            tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
+    }
+    
 
+    
+    
+
+}
+
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(collectionView: UICollectionView,
+        numberOfItemsInSection section: Int) -> Int {
+            var group = listGroups![collectionView.tag]
+            var groupInterests: [String] = []
+            
+            for (key, user) in group["usersId"] {
+                for (key, interest) in user["interests"] {
+                    if !(groupInterests.contains(interest["name"].string!)) {
+                        groupInterests.append(interest["name"].string!)
+                    }
+                }
+            }
+            
+            listGroups![collectionView.tag]["interests"] = JSON(groupInterests)
+
+            return groupInterests.count
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("interestCell",
+                forIndexPath: indexPath) as! InterestListCollectionViewCell
+            var group = listGroups![collectionView.tag]
+            
+            cell.interestName.text = group["interests"][indexPath.row].string
+            cell.contentView.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+            cell.contentView.setNeedsLayout()
+            cell.contentView.layoutIfNeeded()
+            
+            return cell
+    }
+    
+    
+    
 }
 

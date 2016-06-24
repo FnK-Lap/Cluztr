@@ -26,7 +26,7 @@ class HttpHelper {
                     errors(json)
                 }
             } else {
-                let data = ["message" : "Vous n'avez pas de connection internet."]
+                let data = ["message" : "Vous n'avez pas de connection internet.", "response" : "\(response)"]
                 let json = JSON(data)
                 errors(json)
             }

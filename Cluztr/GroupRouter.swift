@@ -18,6 +18,7 @@ enum GroupRouter: URLRequestConvertible {
     case Invite(JSON, String)
     case Join(String)
     case GetChats(JSON)
+    case GetGroups()
     
     var method: Alamofire.Method {
         switch self {
@@ -30,6 +31,8 @@ enum GroupRouter: URLRequestConvertible {
         case .Join:
             return .POST
         case .GetChats:
+            return .GET
+        case .GetGroups:
             return .GET
         }
     }
@@ -46,6 +49,8 @@ enum GroupRouter: URLRequestConvertible {
             return "/group/\(id)/join"
         case .GetChats(let id):
             return "/group/\(id)/chats"
+        case .GetGroups:
+            return "/groups"
         }
     }
     
