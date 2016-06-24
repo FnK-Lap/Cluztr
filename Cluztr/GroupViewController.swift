@@ -8,28 +8,96 @@
 
 import UIKit
 
-class GroupViewController: UIViewController {
+class GroupViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var group: JSON?
 
     @IBOutlet weak var firstMemberImage: UIImageView!
     @IBOutlet weak var secondMemberImage: UIImageView!
     @IBOutlet weak var thirdMemberImage: UIImageView!
+    @IBOutlet weak var bigPicture: UIImageView!
     
     @IBOutlet weak var firstMemberName: UIButton!
     @IBOutlet weak var secondMemberName: UIButton!
     @IBOutlet weak var thirdMemberName: UIButton!
     
+    @IBOutlet weak var interestCollectionview2: UICollectionView!
+    
+    @IBAction func clickFirstUser(sender: UIButton) {
+        if firstMemberName.selected == false {
+            firstMemberName.selected = true
+            secondMemberName.selected = false
+            thirdMemberName.selected = false
+            if let selectedUser:JSON = self.group!["usersId"][0] {
+                bigPicture.hidden = false
+                let url = NSURL(string: self.group!["usersId"][0]["profilePicture"]["url"].string!)
+                self.loadPictureFrom(url!, withCompletion: { (picture, error) -> Void in
+                    self.bigPicture.image = picture
+                })
+            }
+        } else {
+            firstMemberName.selected = false
+            secondMemberName.selected = false
+            thirdMemberName.selected = false
+            self.bigPicture.hidden = true
+        }
+        interestCollectionview2.reloadData()
+    }
+    @IBAction func clickSecondUser(sender: UIButton) {
+        if secondMemberName.selected == false {
+            secondMemberName.selected = true
+            firstMemberName.selected = false
+            thirdMemberName.selected = false
+            if let selectedUser:JSON = self.group!["usersId"][1] {
+                bigPicture.hidden = false
+                let url = NSURL(string: self.group!["usersId"][1]["profilePicture"]["url"].string!)
+                self.loadPictureFrom(url!, withCompletion: { (picture, error) -> Void in
+                    self.bigPicture.image = picture
+                })
+            }
+        } else {
+            firstMemberName.selected = false
+            secondMemberName.selected = false
+            thirdMemberName.selected = false
+            self.bigPicture.hidden = true
+        }
+        interestCollectionview2.reloadData()
+    }
+    
+    @IBAction func clickThirdUser(sender: UIButton) {
+        if thirdMemberName.selected == false {
+            thirdMemberName.selected = true
+            firstMemberName.selected = false
+            secondMemberName.selected = false
+            if let selectedUser:JSON = self.group!["usersId"][2] {
+                bigPicture.hidden = false
+                let url = NSURL(string: self.group!["usersId"][2]["profilePicture"]["url"].string!)
+                self.loadPictureFrom(url!, withCompletion: { (picture, error) -> Void in
+                    self.bigPicture.image = picture
+                })
+            }
+        } else {
+            firstMemberName.selected = false
+            secondMemberName.selected = false
+            thirdMemberName.selected = false
+            self.bigPicture.hidden = true
+        }
+        interestCollectionview2.reloadData()
+    }
+    
     @IBOutlet weak var invitationHeightConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        interestCollectionview2.delegate = self
+        interestCollectionview2.dataSource = self
         let tabBarController = self.tabBarController as! TabBarViewController
         let groupId = tabBarController.user!["groupId"]
         HttpHelper().request(GroupRouter.GetGroup(groupId),
             success: {json in
                 // User Login
                 self.group = json["data"]
+                self.interestCollectionview2.reloadData()
                 self.initUI()
             },
             errors: {error in
@@ -120,6 +188,62 @@ class GroupViewController: UIViewController {
         let picture = UIImage(data: data)
         
         completion(picture: picture, error: nil)
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var groupInterests: [String] = []
+        if (group != nil) {
+            if self.group!["interests"]{
+                return self.group!["interests"].count
+            } else {
+                for (_, user) in group!["usersId"] {
+                    print("###################")
+                    print(user["interests"])
+                    for (_, interest) in user["interests"] {
+                        if !(groupInterests.contains(interest["name"].string!)) {
+                            groupInterests.append(interest["name"].string!)
+                        }
+                    }
+                }
+                
+                self.group!["interests"] = JSON(groupInterests)
+                return groupInterests.count
+            }
+        }
+        return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("interestCell2", forIndexPath: indexPath) as! InterestListCollectionViewCell
+        cell.interestName.textColor = UIColor(red: 44/256, green: 173/256, blue: 198/256, alpha: 1)
+        cell.backgroundColor = UIColor.whiteColor()
+        if firstMemberName.selected {
+            for (_, interest) in group!["usersId"][0]["interests"] {
+                if (interest["name"].string == group!["interests"][indexPath.row].string!) {
+                    cell.backgroundColor = UIColor(red: 44/256, green: 173/256, blue: 198/256, alpha: 1)
+                    cell.interestName.textColor = UIColor.whiteColor()
+                }
+            }
+        }
+        if secondMemberName.selected {
+            for (_, interest) in group!["usersId"][1]["interests"] {
+                if (interest["name"].string == group!["interests"][indexPath.row].string!) {
+                    cell.backgroundColor = UIColor(red: 44/256, green: 173/256, blue: 198/256, alpha: 1)
+                    cell.interestName.textColor = UIColor.whiteColor()
+                }
+            }
+        }
+        if thirdMemberName.selected {
+            for (_, interest) in group!["usersId"][2]["interests"] {
+                if (interest["name"].string == group!["interests"][indexPath.row].string!) {
+                    cell.backgroundColor = UIColor(red: 44/256, green: 173/256, blue: 198/256, alpha: 1)
+                    cell.interestName.textColor = UIColor.whiteColor()
+                }
+            }
+        }
+        cell.interestName.text = group!["interests"][indexPath.row].string!
+        
+        return cell
     }
     
     /*
