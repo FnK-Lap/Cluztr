@@ -64,19 +64,25 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let chatId = self.chatId {
             getChat(chatId)
         }
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         
         socket.connect()
         
         socket.on(chatId!) { data, ack in
-            print("new Message")
-            let json = JSON(data[0])
-            print("\(json["message"])")
-            self.messages += [json["message"]]
-            self.tableView.reloadData()
-            self.scrollToLastRow();
-            print(self.messages)
+            if (self.tabBarController != nil) {
+                print("new Message")
+                let json = JSON(data[0])
+                print("\(json["message"])")
+                self.messages += [json["message"]]
+                self.tableView.reloadData()
+                self.scrollToLastRow()
+                print(self.messages)
+            }
         }
-        // Do any additional setup after loading the view.
+
     }
     
     
@@ -106,6 +112,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         UIView.animateWithDuration(0.1) { () -> Void in
             self.bottomTextViewConstraint.constant = keyboardFrame.size.height - 50
+            self.scrollToLastRow()
         }
     }
     
@@ -123,6 +130,7 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
     func getChat(id: String) {
         HttpHelper().request(ChatRouter.GetChat(id),
             success: {json in
+                self.isPrivate = json["data"]["isPrivate"].boolValue
                 self.messages = json["data"]["messages"].arrayValue
                 print("-------------- Print Count JSON response Get Chat --------------")
                 print(self.messages.count)
@@ -176,6 +184,24 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
                 cell.rightLabelView.hidden = true
                 cell.leftLabelView.hidden = false
             }
+        } else {
+            let userId = user!["_id"].string
+            print("ccccccccccccccccc")
+            print(message["user"])
+            
+            if userId == (message["user"]["_id"].string != nil ? message["user"]["_id"].string : message["user"].string) {
+                cell.rightLabel.text = message["message"].string
+                cell.leftLabel.text = ""
+                cell.leftLabelView.hidden = true
+                cell.rightLabelView.hidden = false
+            } else {
+                cell.leftLabel.text = message["message"].string
+                cell.rightLabel.text = ""
+                cell.rightLabelView.hidden = true
+                cell.leftLabelView.hidden = false
+            }
+
+            
         }
         
         

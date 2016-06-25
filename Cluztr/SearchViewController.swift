@@ -141,13 +141,14 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UITable
             tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
     }
     
+    
 
     
     
 
 }
 
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
             var group = listGroups![collectionView.tag]
@@ -174,13 +175,17 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             var group = listGroups![collectionView.tag]
             
             cell.interestName.text = group["interests"][indexPath.row].string
-            cell.contentView.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-            cell.contentView.setNeedsLayout()
-            cell.contentView.layoutIfNeeded()
-            
+
             return cell
     }
-    
+
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            var cell = collectionView.cellForItemAtIndexPath(indexPath) as! InterestListCollectionViewCell
+
+            return (cell.interestName.frame.size)
+    }
     
     
 }

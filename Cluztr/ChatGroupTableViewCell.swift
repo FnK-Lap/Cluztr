@@ -11,6 +11,7 @@ import UIKit
 class ChatGroupTableViewCell: UITableViewCell {
     
     var chatId:String?
+    var chat: JSON?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastMessageLabel: UILabel!
@@ -20,6 +21,7 @@ class ChatGroupTableViewCell: UITableViewCell {
     @IBOutlet var memberImages: [UIImageView]!
     
     func initUI(chat:JSON) {
+        self.chat = chat
         if chat["isPrivate"] {
             for (index, user) in chat["ownGroup"]["usersId"].enumerate() {
                 let url = NSURL(string: user.1["profilePicture"]["url"].string!)

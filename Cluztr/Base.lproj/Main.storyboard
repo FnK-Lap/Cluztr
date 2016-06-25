@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dBh-Oh-a63">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1808" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dBh-Oh-a63">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -119,6 +119,9 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TtB-5r-kEn">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="invitation_background" translatesAutoresizingMaskIntoConstraints="NO" id="xs2-oN-O4I">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GROUPE NON CRÉE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCc-GA-5BM">
                                         <rect key="frame" x="229" y="28" width="143" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
@@ -158,10 +161,14 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.50588235290000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="xs2-oN-O4I" firstAttribute="top" secondItem="TtB-5r-kEn" secondAttribute="top" id="8qB-90-Pvz"/>
+                                    <constraint firstItem="xs2-oN-O4I" firstAttribute="leading" secondItem="TtB-5r-kEn" secondAttribute="leading" id="Ecp-XZ-dYU"/>
                                     <constraint firstItem="jCv-Dj-Ai1" firstAttribute="top" secondItem="LCc-GA-5BM" secondAttribute="bottom" constant="5" id="KWA-0d-Nsl"/>
                                     <constraint firstAttribute="height" constant="150" id="Z3b-dP-L6H"/>
                                     <constraint firstAttribute="topMargin" secondItem="LCc-GA-5BM" secondAttribute="top" constant="-20" id="aTg-FH-g2i"/>
                                     <constraint firstItem="jCv-Dj-Ai1" firstAttribute="centerX" secondItem="TtB-5r-kEn" secondAttribute="centerX" id="e2F-RS-UyF"/>
+                                    <constraint firstAttribute="trailing" secondItem="xs2-oN-O4I" secondAttribute="trailing" id="g4f-NC-5oi"/>
+                                    <constraint firstAttribute="bottom" secondItem="xs2-oN-O4I" secondAttribute="bottom" id="j8t-ny-GOk"/>
                                     <constraint firstItem="I5x-MK-RYr" firstAttribute="centerX" secondItem="TtB-5r-kEn" secondAttribute="centerX" id="wOr-Fa-BOd"/>
                                     <constraint firstAttribute="bottom" secondItem="I5x-MK-RYr" secondAttribute="bottom" constant="20" id="xps-Ln-JhE"/>
                                     <constraint firstItem="LCc-GA-5BM" firstAttribute="centerX" secondItem="TtB-5r-kEn" secondAttribute="centerX" id="zFn-qS-65C"/>
@@ -340,16 +347,16 @@
                                     <constraint firstAttribute="height" constant="70" id="rL1-dQ-d5X"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="179" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MNb-Vz-4SG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MNb-Vz-4SG">
                                 <rect key="frame" x="0.0" y="70" width="600" height="481"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.50588235290000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="listGroupCell" rowHeight="179" id="q6E-5o-yDy" customClass="ListGroupTableViewCell" customModule="Cluztr" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="179"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="listGroupCell" rowHeight="170" id="q6E-5o-yDy" customClass="ListGroupTableViewCell" customModule="Cluztr" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q6E-5o-yDy" id="yyn-Bj-GY2">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="178"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="169"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C9F-h8-pWJ">
@@ -407,41 +414,51 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GgR-fG-Kyo">
-                                                    <rect key="frame" x="8" y="120" width="584" height="50"/>
+                                                    <rect key="frame" x="8" y="120" width="584" height="41"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ny7-GN-0IY">
-                                                        <size key="itemSize" width="66" height="50"/>
+                                                        <size key="itemSize" width="89" height="35"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="interestCell" id="Qz0-Cb-Owl" customClass="InterestListCollectionViewCell" customModule="Cluztr" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="66" height="50"/>
+                                                            <rect key="frame" x="0.0" y="3" width="89" height="35"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                                <rect key="frame" x="0.0" y="0.0" width="66" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="89" height="35"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0i-hX-MDk">
-                                                                        <rect key="frame" x="8" y="8" width="76" height="34"/>
+                                                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0i-hX-MDk">
+                                                                        <rect key="frame" x="8" y="8" width="73" height="19"/>
                                                                         <accessibility key="accessibilityConfiguration">
                                                                             <accessibilityTraits key="traits" staticText="YES" adjustable="YES"/>
                                                                         </accessibility>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <color key="textColor" red="0.17254901959999999" green="0.67843137249999996" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </view>
-                                                            <color key="backgroundColor" red="1" green="0.50588235290000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="O0i-hX-MDk" firstAttribute="top" secondItem="Qz0-Cb-Owl" secondAttribute="top" constant="8" id="9h4-el-mvR"/>
                                                                 <constraint firstAttribute="bottom" secondItem="O0i-hX-MDk" secondAttribute="bottom" constant="8" id="GQb-Ba-kP7"/>
                                                                 <constraint firstItem="O0i-hX-MDk" firstAttribute="leading" secondItem="Qz0-Cb-Owl" secondAttribute="leading" constant="8" id="nZk-F0-h0w"/>
                                                                 <constraint firstAttribute="trailing" secondItem="O0i-hX-MDk" secondAttribute="trailing" constant="8" id="vBG-F3-yra"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColorFromUIColor">
+                                                                    <color key="value" red="0.17254901959999999" green="0.67843137249999996" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                    <real key="value" value="1.5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <outlet property="interestName" destination="O0i-hX-MDk" id="c1H-hm-nkf"/>
                                                             </connections>
@@ -649,10 +666,10 @@
                                     <outletCollection property="memberImages" destination="Jls-nD-iRh" collectionClass="NSMutableArray" id="ljH-c1-jeI"/>
                                     <outletCollection property="memberImages" destination="NNi-xE-caH" collectionClass="NSMutableArray" id="Px3-oz-Ynf"/>
                                     <outletCollection property="memberImages" destination="EOM-mN-217" collectionClass="NSMutableArray" id="XOE-QR-l9u"/>
-                                    <segue destination="GR6-x8-3MR" kind="showDetail" identifier="OwnChatMessageSegue" trigger="accessoryAction" action="showViewController:sender:" id="6yf-4a-d8M"/>
+                                    <segue destination="GR6-x8-3MR" kind="showDetail" identifier="ChatMessageSegue" trigger="accessoryAction" action="showViewController:sender:" id="6yf-4a-d8M"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatGroupCell" rowHeight="100" id="8mf-yb-g5b" customClass="ChatGroupTableViewCell" customModule="Cluztr" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatGroupCell" rowHeight="100" id="8mf-yb-g5b" customClass="ChatGroupTableViewCell" customModule="Cluztr" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="192" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8mf-yb-g5b" id="RMs-Yk-Tg0">
@@ -777,7 +794,7 @@
                                     <outletCollection property="memberImages" destination="cSQ-JN-ZL5" collectionClass="NSMutableArray" id="ty0-il-u1x"/>
                                     <outletCollection property="memberImages" destination="iCR-lM-8Ft" collectionClass="NSMutableArray" id="Etq-gd-vw0"/>
                                     <outletCollection property="memberImages" destination="n02-LO-9E0" collectionClass="NSMutableArray" id="KlP-X4-fvc"/>
-                                    <segue destination="GR6-x8-3MR" kind="showDetail" identifier="OtherChatMessageSegue" trigger="accessoryAction" id="UgN-jf-lxF"/>
+                                    <segue destination="GR6-x8-3MR" kind="showDetail" identifier="ChatMessageSegue" trigger="accessoryAction" id="UgN-jf-lxF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1020,7 +1037,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBj-Xe-dzB">
                                 <rect key="frame" x="435" y="264" width="165" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.50588235290000005" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.67843137249999996" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4aK-fF-854"/>
                                 </constraints>
@@ -1450,7 +1467,7 @@ groupe Cluztr.</string>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vua-qQ-idc">
                                             <rect key="frame" x="492" y="46" width="100" height="65"/>
-                                            <color key="backgroundColor" red="1" green="0.50588235294117645" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.17254901959999999" green="0.67843137249999996" blue="0.77647058820000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="9Id-3q-9Tg"/>
                                             </constraints>
@@ -1597,11 +1614,11 @@ groupe Cluztr.</string>
         <image name="Walkthroughs - 01" width="640" height="732"/>
         <image name="arrow-left" width="23" height="37"/>
         <image name="default_avatar" width="200" height="200"/>
-        <image name="invitation_background" width="640" height="340"/>
+        <image name="invitation_background" width="640" height="354"/>
         <image name="selectGroup" width="640" height="1136"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6yf-4a-d8M"/>
+        <segue reference="UgN-jf-lxF"/>
         <segue reference="IOx-kH-bPx"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -134,12 +134,7 @@ class ChatTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedCell = tableView.cellForRowAtIndexPath(indexPath)
-        if indexPath.row == 0 {
-            performSegueWithIdentifier("OwnChatMessageSegue", sender: selectedCell)
-        } else {
-            performSegueWithIdentifier("OtherChatMessageSegue", sender: selectedCell)
-        }
-        
+        performSegueWithIdentifier("ChatMessageSegue", sender: selectedCell)
     }
 
 
@@ -151,12 +146,6 @@ class ChatTableViewController: UITableViewController {
         let selectedCell = sender as! ChatGroupTableViewCell
         
         destinationVC.chatId = selectedCell.chatId
-        
-        if segue.identifier == "OwnChatMessageSegue" {
-            destinationVC.isPrivate = true
-        } else if segue.identifier == "OtherChatMessageSegue" {
-            destinationVC.isPrivate = false
-        }
     }
 
 
