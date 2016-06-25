@@ -172,13 +172,22 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if self.isPrivate, let userId = user!["_id"].string {
             
-            
             if userId == (message["user"]["_id"].string != nil ? message["user"]["_id"].string : message["user"].string) {
+                cell.leftImageView.hidden = true
+                cell.rightImageView.hidden = false
+                self.loadPictureFrom(NSURL(string: message["user"]["profilePicture"]["url"].string!)!, withCompletion: { (picture, error) in
+                    cell.rightImageView.image = picture
+                })
                 cell.rightLabel.text = message["message"].string
                 cell.leftLabel.text = ""
                 cell.leftLabelView.hidden = true
                 cell.rightLabelView.hidden = false
             } else {
+                cell.leftImageView.hidden = false
+                cell.rightImageView.hidden = true
+                self.loadPictureFrom(NSURL(string: message["user"]["profilePicture"]["url"].string!)!, withCompletion: { (picture, error) in
+                    cell.leftImageView.image = picture
+                })
                 cell.leftLabel.text = message["message"].string
                 cell.rightLabel.text = ""
                 cell.rightLabelView.hidden = true
@@ -186,27 +195,37 @@ class MessageViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         } else {
             let userId = user!["_id"].string
-            print("ccccccccccccccccc")
-            print(message["user"])
             
             if userId == (message["user"]["_id"].string != nil ? message["user"]["_id"].string : message["user"].string) {
+                cell.leftImageView.hidden = true
+                cell.rightImageView.hidden = false
+                self.loadPictureFrom(NSURL(string: message["user"]["profilePicture"]["url"].string!)!, withCompletion: { (picture, error) in
+                    cell.rightImageView.image = picture
+                })
                 cell.rightLabel.text = message["message"].string
                 cell.leftLabel.text = ""
                 cell.leftLabelView.hidden = true
                 cell.rightLabelView.hidden = false
             } else {
+                cell.leftImageView.hidden = false
+                cell.rightImageView.hidden = true
+                self.loadPictureFrom(NSURL(string: message["user"]["profilePicture"]["url"].string!)!, withCompletion: { (picture, error) in
+                    cell.leftImageView.image = picture
+                })
                 cell.leftLabel.text = message["message"].string
                 cell.rightLabel.text = ""
                 cell.rightLabelView.hidden = true
                 cell.leftLabelView.hidden = false
             }
-
-            
         }
-        
-        
-        
         return cell
+    }
+    
+    func loadPictureFrom(URL: NSURL, withCompletion completion:(picture: UIImage?, error: NSError?) -> Void) {
+        let data = NSData(contentsOfURL: URL)!
+        let picture = UIImage(data: data)
+        
+        completion(picture: picture, error: nil)
     }
 
 
