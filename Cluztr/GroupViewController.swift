@@ -26,9 +26,7 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBAction func clickFirstUser(sender: UIButton) {
         if firstMemberName.selected == false {
             firstMemberName.selected = true
-            secondMemberName.selected = false
-            thirdMemberName.selected = false
-            if let selectedUser:JSON = self.group!["usersId"][0] {
+            if self.group!["usersId"][0].error == nil {
                 bigPicture.hidden = false
                 let url = NSURL(string: self.group!["usersId"][0]["profilePicture"]["url"].string!)
                 self.loadPictureFrom(url!, withCompletion: { (picture, error) -> Void in
@@ -37,18 +35,16 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
             }
         } else {
             firstMemberName.selected = false
-            secondMemberName.selected = false
-            thirdMemberName.selected = false
             self.bigPicture.hidden = true
         }
+        secondMemberName.selected = false
+        thirdMemberName.selected = false
         interestCollectionview2.reloadData()
     }
     @IBAction func clickSecondUser(sender: UIButton) {
         if secondMemberName.selected == false {
             secondMemberName.selected = true
-            firstMemberName.selected = false
-            thirdMemberName.selected = false
-            if let selectedUser:JSON = self.group!["usersId"][1] {
+            if self.group!["usersId"][1].error == nil {
                 bigPicture.hidden = false
                 let url = NSURL(string: self.group!["usersId"][1]["profilePicture"]["url"].string!)
                 self.loadPictureFrom(url!, withCompletion: { (picture, error) -> Void in
@@ -56,32 +52,33 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
                 })
             }
         } else {
-            firstMemberName.selected = false
             secondMemberName.selected = false
-            thirdMemberName.selected = false
             self.bigPicture.hidden = true
         }
+        firstMemberName.selected = false
+        thirdMemberName.selected = false
         interestCollectionview2.reloadData()
     }
     
     @IBAction func clickThirdUser(sender: UIButton) {
         if thirdMemberName.selected == false {
             thirdMemberName.selected = true
-            firstMemberName.selected = false
-            secondMemberName.selected = false
-            if let selectedUser:JSON = self.group!["usersId"][2] {
+            if self.group!["usersId"][2].error == nil {
                 bigPicture.hidden = false
                 let url = NSURL(string: self.group!["usersId"][2]["profilePicture"]["url"].string!)
                 self.loadPictureFrom(url!, withCompletion: { (picture, error) -> Void in
                     self.bigPicture.image = picture
                 })
+            } else {
+                thirdMemberName.selected = false
+                self.bigPicture.hidden = true
             }
         } else {
-            firstMemberName.selected = false
-            secondMemberName.selected = false
             thirdMemberName.selected = false
             self.bigPicture.hidden = true
         }
+        secondMemberName.selected = false
+        firstMemberName.selected = false
         interestCollectionview2.reloadData()
     }
     
