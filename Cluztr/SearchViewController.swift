@@ -128,6 +128,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier("listGroupCell") as! ListGroupTableViewCell
         let group = self.listGroups![indexPath.row]
         cell.initUI(group)
+        cell.tag = indexPath.row
         
         return cell
     }
@@ -141,14 +142,14 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UITable
             tableViewCell.setCollectionViewDataSourceDelegate(self, forRow: indexPath.row)
     }
     
-    
-
-    
-    
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destinationVC = segue.destinationViewController as! OtherGroupViewController
+        let group = self.listGroups![sender!.tag]
+        destinationVC.group = group
+    }
 }
 
-extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView,
         numberOfItemsInSection section: Int) -> Int {
             var group = listGroups![collectionView.tag]
@@ -179,13 +180,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             return cell
     }
 
-    func collectionView(collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-            var cell = collectionView.cellForItemAtIndexPath(indexPath) as! InterestListCollectionViewCell
-
-            return (cell.interestName.frame.size)
-    }
+   
     
     
 }
