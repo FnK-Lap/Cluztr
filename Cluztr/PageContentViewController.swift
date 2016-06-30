@@ -21,9 +21,9 @@ class PageContentViewController: UIViewController {
     var loginButton: FBSDKLoginButton?
     
     let pageTitles = [
-        "Invite",
-        "Recherche",
-        "Rencontre"
+        "Rejoins",
+        "Sors",
+        "Amuse toi"
     ]
     let images = [
         "Walkthroughs - 01",
@@ -31,16 +31,15 @@ class PageContentViewController: UIViewController {
         "Walkthroughs - 03"
     ]
     let pageContents = [
-        "Invite 2 de tes amis pour créer ton \n groupe Cluztr.",
-        "Trouve d'autres groupes en fonction \n de leurs centres d'intérëts.",
-        "Mettez vous d'accord d'un lieu et \n d'une activité avec le tchat."
+        "Rejoins ou invite 2 de tes amis \n pour créer un groupe",
+        "Sors entre amis et laisse Cluztr te présenter \n les groupes qui te correspondent",
+        "Mettez-vous d'accord d'un lieu \n et faites connaissance"
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set dot at current page
-        self.pageControlDot.currentPage = pageIndex!
+        
         
         // Image
         self.bkImageView.image = UIImage(named: self.images[self.pageIndex!])
@@ -58,9 +57,6 @@ class PageContentViewController: UIViewController {
             self.contentLabel.alpha = 1.0
         })
         
-        // Add Fb Login Button on bottom view
-        self.loginButton!.center = CGPointMake(self.view.frame.width / 2, self.view.frame.height - self.loginButton!.frame.height)
-        self.view.addSubview(self.loginButton!)
     }
 
     override func didReceiveMemoryWarning() {

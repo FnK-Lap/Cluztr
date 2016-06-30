@@ -24,7 +24,6 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         HttpHelper().request(GroupRouter.GetReceivedCluzts(),
             success: {json in
                 self.receivedCluzts = json["data"]
-                print(self.receivedCluzts)
                 self.receivedCluztsTableView.reloadData()
             },
             errors: {error in
@@ -61,6 +60,12 @@ class SuggestionViewController: UIViewController, UITableViewDelegate, UITableVi
         cell.initUI(self.receivedCluzts![indexPath.row])
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let destinationVC = segue.destinationViewController as! OtherGroupViewController
+        let group = self.receivedCluzts![sender!.tag]["sender"]
+        destinationVC.group = group
     }
     
     

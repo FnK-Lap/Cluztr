@@ -16,8 +16,15 @@ class ReceivedCluztTableViewCell: UITableViewCell {
     @IBOutlet weak var secondMemberImage: UIImageView!
     @IBOutlet weak var thirdMemberImage: UIImageView!
     
+    @IBOutlet weak var firstMemberName: UILabel!
+    @IBOutlet weak var secondMemberName: UILabel!
+    
+    @IBOutlet weak var firstMemberHeart: UIImageView!
+    @IBOutlet weak var secondMemberHeart: UIImageView!
+    
     func initUI(cluzt:JSON) {
         self.cluzt = cluzt
+        
         
         print(cluzt)
         
@@ -35,6 +42,29 @@ class ReceivedCluztTableViewCell: UITableViewCell {
                 self.loadPictureFrom(url, withCompletion: { (picture, error) -> Void in
                     self.thirdMemberImage.image = picture
                 })
+            }
+        }
+        
+        self.firstMemberHeart.tintColor = UIColor.lightGrayColor()
+        self.secondMemberHeart.tintColor = UIColor.lightGrayColor()
+        var indexHeart = 0
+        var indexName = 0
+        let connectedUser = NSUserDefaults.standardUserDefaults().objectForKey("userId") as! String
+        for (key, user) in self.cluzt!["receiver"]["usersId"] {
+            if user["_id"].stringValue != connectedUser && indexName == 0 {
+                self.firstMemberName.text = user["firstname"].stringValue
+                indexName++
+            } else if user["_id"].stringValue != connectedUser && indexName == 1 {
+                self.secondMemberName.text = user["firstname"].stringValue
+                indexName++
+            }
+            if cluzt["acceptedUsers"].arrayValue.contains(user["_id"]) && user["_id"].stringValue != connectedUser {
+                if indexHeart == 0 {
+                    self.firstMemberHeart.tintColor = UIColor.init(red: 115/255, green: 217/255, blue: 150/255, alpha: 1)
+                } else {
+                    self.secondMemberHeart.tintColor = UIColor.init(red: 115/255, green: 217/255, blue: 150/255, alpha: 1)
+                }
+                indexHeart++
             }
         }
     }

@@ -6,6 +6,8 @@
 //  Copyright © 2015 Cluztr. All rights reserved.
 //
 
+import FBSDKLoginKit
+import Locksmith
 import UIKit
 
 class GroupViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -106,6 +108,25 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         )
 
         //  any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let tabBarController = self.tabBarController as! TabBarViewController
+        let groupId = tabBarController.user!["groupId"]
+        HttpHelper().request(GroupRouter.GetGroup(groupId),
+            success: {json in
+                // User Login
+                self.group = json["data"]
+                self.interestCollectionview2.reloadData()
+                self.initUI()
+            },
+            errors: {error in
+                let alertController = UIAlertController(title: "Error Network", message: "\(error["message"])", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "OKAY", style: UIAlertActionStyle.Default, handler: nil ))
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        )
     }
     
     override func didReceiveMemoryWarning() {
@@ -241,6 +262,21 @@ class GroupViewController: UIViewController, UICollectionViewDelegate, UICollect
         cell.interestName.text = group!["interests"][indexPath.row].string!
         
         return cell
+    }
+    
+    @IBAction func logout(sender: AnyObject) {
+        FBSDKLoginManager().logOut()
+        if let _ = Locksmith.loadDataForUserAccount("access_token") {
+            do {
+                try Locksmith.deleteDataForUserAccount("access_token")
+                try Locksmith.deleteDataForUserAccount("email")
+            } catch _ {
+                print("Error delete access token from keychain")
+            }
+        }
+        let rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("rootViewController") as? WalkthroughViewController
+        self.presentViewController(rootViewController!, animated: true, completion: nil)
+        //        self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     /*

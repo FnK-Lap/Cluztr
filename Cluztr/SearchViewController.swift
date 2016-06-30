@@ -41,7 +41,9 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UITable
                 print("Error delete access token from keychain")
             }
         }
-        self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
+        let rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("rootViewController") as? WalkthroughViewController
+        self.presentViewController(rootViewController!, animated: true, completion: nil)
+//        self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func searchMode(sender: UISegmentedControl) {

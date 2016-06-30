@@ -24,10 +24,16 @@ class OtherGroupViewController: UIViewController, UICollectionViewDataSource, UI
     
     @IBOutlet weak var InterestCollectionView: UICollectionView!
     
+    @IBOutlet weak var sendCluztOutlet: UIButton!
+    
     @IBAction func sendCluztButton(sender: UIButton) {
         HttpHelper().request(GroupRouter.PostCluzt(group!["_id"]),
             success: {json in
                 print(json)
+                self.sendCluztOutlet.tintColor = UIColor.init(red: 115/255, green: 217/255, blue: 150/255, alpha: 1)
+                if let done = json["done"].bool {
+                    self.performSegueWithIdentifier("cluztCompleteSegue", sender: nil)
+                }
             },
             errors: {error in
                 let alertController = UIAlertController(title: "Error Network", message: "\(error["message"])", preferredStyle: UIAlertControllerStyle.Alert)
@@ -215,9 +221,17 @@ class OtherGroupViewController: UIViewController, UICollectionViewDataSource, UI
         }
         return 0
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "cluztCompleteSegue" {
+            let destinationVC = segue.destinationViewController as! CluztCompleteViewController
+            destinationVC.group = self.group
+        }
+    }
 
     
     @IBAction func backButton(sender: AnyObject) {
+        print(self.navigationController)
         self.navigationController?.popViewControllerAnimated(true)
     }
     

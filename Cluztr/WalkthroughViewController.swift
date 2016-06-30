@@ -18,6 +18,8 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
     var pageViewController : UIPageViewController!
     var logged: Bool = false
     var user: JSON?
+    
+    @IBOutlet weak var pageControlDot: UIPageControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +63,7 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
                 
                 self.logged = true
                 self.user = json["user"]
-                UserModel().loginUser(json["token"], email: self.user!["email"])
+                UserModel().loginUser(json["token"], email: self.user!["email"], userId: self.user!["_id"])
                 if self.user!["groupId"] != nil {
                     self.performSegueWithIdentifier("StartSegue", sender: nil)
                 } else {
@@ -95,6 +97,14 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         self.view.addSubview(pageViewController.view)
 
         self.pageViewController.didMoveToParentViewController(self)
+        self.view.bringSubviewToFront(self.pageControlDot)
+        // Create Fb Login Button
+        let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
+        loginButton.readPermissions = ["public_profile", "email", "user_birthday"]
+        loginButton.center = CGPointMake(self.view.frame.width / 2, self.view.frame.height - loginButton.frame.height)
+        self.view.addSubview(loginButton)
+        self.view.bringSubviewToFront(loginButton)
     }
     
     func viewControllerAtIndex(index : Int) -> UIViewController? {
@@ -105,17 +115,15 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
             return nil
         }
         
-        // Create Fb Login Button
-        let loginButton = FBSDKLoginButton()
-        loginButton.delegate = self
-        loginButton.readPermissions = ["public_profile", "email", "user_birthday"]
+        
         
         // Pass login button and index to pageViewController
         pageContentViewController.pageIndex   = index
-        pageContentViewController.loginButton = loginButton
+        
             
         return pageContentViewController
     }
+    
     
     
     // MARK: - Page View Controller DataSource
@@ -124,6 +132,8 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         
         var index = (viewController as! PageContentViewController).pageIndex!
         let nbPages = (viewController as! PageContentViewController).pageTitles.count
+        // Set dot at current page
+        self.pageControlDot.currentPage = index
         index++
         if (index >= nbPages) {
             return nil
@@ -135,6 +145,8 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         
         var index = (viewController as! PageContentViewController).pageIndex!
+        // Set dot at current page
+        self.pageControlDot.currentPage = index
         if (index <= 0) {
             return nil
         }

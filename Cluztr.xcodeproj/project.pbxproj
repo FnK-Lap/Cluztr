@@ -22,6 +22,7 @@
 		8C68EB311D233D7C00BB545D /* ReceivedCluztTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C68EB301D233D7C00BB545D /* ReceivedCluztTableViewCell.swift */; };
 		8C6E7A861C0F8C77001673B2 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6E7A851C0F8C77001673B2 /* CALayerExtension.swift */; };
 		8C6E7A931C0F9B0E001673B2 /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6E7A921C0F9B0E001673B2 /* InvitationViewController.swift */; };
+		8C7A72D71D2494E300E26087 /* CluztCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7A72D61D2494E300E26087 /* CluztCompleteViewController.swift */; };
 		8C7C3D421C105C4A00882467 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D411C105C4A00882467 /* StringExtension.swift */; };
 		8C7C3D4C1C11D5A800882467 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */; };
 		8C7C3D4E1C11E78000882467 /* ChatGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */; };
@@ -196,6 +197,7 @@
 		8C68EB301D233D7C00BB545D /* ReceivedCluztTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedCluztTableViewCell.swift; sourceTree = "<group>"; };
 		8C6E7A851C0F8C77001673B2 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
 		8C6E7A921C0F9B0E001673B2 /* InvitationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
+		8C7A72D61D2494E300E26087 /* CluztCompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CluztCompleteViewController.swift; sourceTree = "<group>"; };
 		8C7C3D411C105C4A00882467 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGroupTableViewCell.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				8C7C3D4B1C11D5A800882467 /* ChatTableViewController.swift */,
 				8C7C3DCB1C1714D600882467 /* MessageViewController.swift */,
 				8C2B04771D1A06680026E0BB /* InterestListCollectionViewCell.swift */,
+				8C7A72D61D2494E300E26087 /* CluztCompleteViewController.swift */,
 			);
 			path = Cluztr;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				F1B59E5B1BC7BC0A00BD76C8 /* (null) in Sources */,
 				8C0A34B11C1F7F38000608AD /* MessageTableViewCell.swift in Sources */,
 				F1F865291C14F42200DFCC34 /* FooterReusableView.swift in Sources */,
+				8C7A72D71D2494E300E26087 /* CluztCompleteViewController.swift in Sources */,
 				F1F865211C0FB78D00DFCC34 /* InterestViewCell.swift in Sources */,
 				F14D5BC91D1DA96D002F99A8 /* SocketEngineWebsocket.swift in Sources */,
 				F14D5BC31D1DA96D002F99A8 /* SocketClientSpec.swift in Sources */,
