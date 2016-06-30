@@ -33,7 +33,7 @@ class PageContentViewController: UIViewController {
     let pageContents = [
         "Rejoins ou invite 2 de tes amis \n pour créer un groupe",
         "Sors entre amis et laisse Cluztr te présenter \n les groupes qui te correspondent",
-        "Mettez-vous d'accord d'un lieu \n et faites connaissance"
+        "Mettez-vous d'accord sur lieu \n et faites connaissance"
     ]
 
     override func viewDidLoad() {

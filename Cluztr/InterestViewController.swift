@@ -11,6 +11,7 @@ import UIKit
 class InterestViewController: UICollectionViewController {
     
     var groupId: String?
+    var user: JSON?
     var selectedInterest: Array<String> = []
     
     var footer: FooterReusableView?
@@ -54,15 +55,16 @@ class InterestViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "joinCreateGroupSuccess" {
+            let destinationVC = segue.destinationViewController as! JoinCreateGroupSuccessViewController
+            destinationVC.groupId = self.groupId
+            destinationVC.user = self.user
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -166,10 +168,12 @@ class InterestViewController: UICollectionViewController {
                     // Join Group
                     HttpHelper().request(GroupRouter.Join(self.groupId!),
                         success: {json in
-                            let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
-                            print(json)
-                            startViewController?.user = json["user"]
-                            self.presentViewController(startViewController!, animated: true, completion: nil)
+                            self.user = json["user"]
+                            self.performSegueWithIdentifier("joinCreateGroupSuccess", sender: nil)
+//                            let startViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Start") as? TabBarViewController
+//                            print(json)
+                            
+//                            self.presentViewController(startViewController!, animated: true, completion: nil)
                         },
                         errors: {json in
                             var errorMessage = "Une erreur est survenue"

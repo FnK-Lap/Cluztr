@@ -29,6 +29,7 @@
 		8C7C3DB81C16671700882467 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8C7C3DCC1C1714D600882467 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3DCB1C1714D600882467 /* MessageViewController.swift */; };
 		8C7C3DCE1C1717F900882467 /* ChatRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7C3DCD1C1717F900882467 /* ChatRouter.swift */; };
+		8C7DEEBD1D25688A00BD550D /* JoinCreateGroupSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7DEEBC1D25688A00BD550D /* JoinCreateGroupSuccessViewController.swift */; };
 		8C807E9A1D1850800009B756 /* ListGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C807E991D1850800009B756 /* ListGroupTableViewCell.swift */; };
 		8C862A171D1EC31A00A2478B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8629EA1D1EC2ED00A2478B /* Alamofire.framework */; };
 		8C862A181D1EC31A00A2478B /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8629EA1D1EC2ED00A2478B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -203,6 +204,7 @@
 		8C7C3D4D1C11E78000882467 /* ChatGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGroupTableViewCell.swift; sourceTree = "<group>"; };
 		8C7C3DCB1C1714D600882467 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		8C7C3DCD1C1717F900882467 /* ChatRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRouter.swift; sourceTree = "<group>"; };
+		8C7DEEBC1D25688A00BD550D /* JoinCreateGroupSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinCreateGroupSuccessViewController.swift; sourceTree = "<group>"; };
 		8C807E991D1850800009B756 /* ListGroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListGroupTableViewCell.swift; sourceTree = "<group>"; };
 		8C8629E11D1EC2ED00A2478B /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../Frameworks/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		8C862A1B1D1EC36A00A2478B /* Locksmith.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Locksmith.xcodeproj; path = "../Frameworks/Locksmith-master/Locksmith.xcodeproj"; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				8C7C3DCB1C1714D600882467 /* MessageViewController.swift */,
 				8C2B04771D1A06680026E0BB /* InterestListCollectionViewCell.swift */,
 				8C7A72D61D2494E300E26087 /* CluztCompleteViewController.swift */,
+				8C7DEEBC1D25688A00BD550D /* JoinCreateGroupSuccessViewController.swift */,
 			);
 			path = Cluztr;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				8C89407B1BC29AD4009783AB /* WalkthroughViewController.swift in Sources */,
 				8C98A5B11BC4266C00F621E0 /* UserRouter.swift in Sources */,
 				F14D5BBF1D1DA96D002F99A8 /* WebSocket.swift in Sources */,
+				8C7DEEBD1D25688A00BD550D /* JoinCreateGroupSuccessViewController.swift in Sources */,
 				F14D5BCA1D1DA96D002F99A8 /* SocketEventHandler.swift in Sources */,
 				8C862A321D1EDF5300A2478B /* OtherGroupViewController.swift in Sources */,
 				F14D5BBD1D1DA96D002F99A8 /* SocketTypes.swift in Sources */,
