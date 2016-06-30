@@ -64,6 +64,8 @@ class OtherGroupViewController: UIViewController, UICollectionViewDataSource, UI
         self.thirdMemberName.titleLabel?.numberOfLines = 2
         self.thirdMemberName.titleLabel?.textAlignment = .Center
         self.thirdMemberName.setTitle("", forState: .Normal)
+        
+        print(self.group)
 
         for (key, user) in self.group!["usersId"] {
             let profilePictureUrl = NSURL(string: user["profilePicture"]["url"].string!)!

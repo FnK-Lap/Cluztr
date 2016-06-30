@@ -18,6 +18,7 @@
 		8C4511081BBE92F9004BDC9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511071BBE92F9004BDC9A /* Assets.xcassets */; };
 		8C45110B1BBE92F9004BDC9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C4511091BBE92F9004BDC9A /* LaunchScreen.storyboard */; };
 		8C4ED9631BE835D9008962A1 /* SelectGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4ED9621BE835D9008962A1 /* SelectGroupViewController.swift */; };
+		8C52790F1D25B52F00AD5F91 /* SentCluztTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52790E1D25B52F00AD5F91 /* SentCluztTableViewCell.swift */; };
 		8C5DFE0D1BC1CB1600E5AF07 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */; };
 		8C68EB311D233D7C00BB545D /* ReceivedCluztTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C68EB301D233D7C00BB545D /* ReceivedCluztTableViewCell.swift */; };
 		8C6E7A861C0F8C77001673B2 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C6E7A851C0F8C77001673B2 /* CALayerExtension.swift */; };
@@ -194,6 +195,7 @@
 		8C45110A1BBE92F9004BDC9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C45110C1BBE92F9004BDC9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C4ED9621BE835D9008962A1 /* SelectGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGroupViewController.swift; sourceTree = "<group>"; };
+		8C52790E1D25B52F00AD5F91 /* SentCluztTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentCluztTableViewCell.swift; sourceTree = "<group>"; };
 		8C5DFE0C1BC1CB1600E5AF07 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		8C68EB301D233D7C00BB545D /* ReceivedCluztTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedCluztTableViewCell.swift; sourceTree = "<group>"; };
 		8C6E7A851C0F8C77001673B2 /* CALayerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				8C0A34B01C1F7F38000608AD /* MessageTableViewCell.swift */,
 				8C807E991D1850800009B756 /* ListGroupTableViewCell.swift */,
 				8C68EB301D233D7C00BB545D /* ReceivedCluztTableViewCell.swift */,
+				8C52790E1D25B52F00AD5F91 /* SentCluztTableViewCell.swift */,
 			);
 			name = TableViewCell;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				8C8940791BC295F8009783AB /* TabBarViewController.swift in Sources */,
 				F14D5BC71D1DA96D002F99A8 /* SocketEnginePollable.swift in Sources */,
 				F14D5BC41D1DA96D002F99A8 /* SocketEngine.swift in Sources */,
+				8C52790F1D25B52F00AD5F91 /* SentCluztTableViewCell.swift in Sources */,
 				8C7C3DCE1C1717F900882467 /* ChatRouter.swift in Sources */,
 				F14D5BBE1D1DA96D002F99A8 /* SwiftRegex.swift in Sources */,
 				8C4511011BBE92F9004BDC9A /* GroupViewController.swift in Sources */,
