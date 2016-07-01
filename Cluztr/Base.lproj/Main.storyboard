@@ -748,13 +748,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qeO-7s-yQz">
                                 <rect key="frame" x="0.0" y="70" width="600" height="481"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agW-6l-Que">
-                                <rect key="frame" x="277" y="444" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="logout:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="wsr-1K-cCW"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPn-Rm-BCa">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
                                 <subviews>
@@ -1772,11 +1765,6 @@
                             <constraint firstItem="c62-8M-IeN" firstAttribute="top" secondItem="l9V-6B-eSX" secondAttribute="bottom" id="Vvd-Bb-V2o"/>
                             <constraint firstItem="BUA-ik-6h9" firstAttribute="top" secondItem="wfx-Im-fah" secondAttribute="bottom" constant="8" id="en4-U9-1eV"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="BUA-ik-6h9"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="BfL-W1-uFh"/>
                     <connections>

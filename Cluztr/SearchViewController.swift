@@ -31,21 +31,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, UITable
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func logout(sender: AnyObject) {
-        FBSDKLoginManager().logOut()
-        if let _ = Locksmith.loadDataForUserAccount("access_token") {
-            do {
-                try Locksmith.deleteDataForUserAccount("access_token")
-                try Locksmith.deleteDataForUserAccount("email")
-            } catch _ {
-                print("Error delete access token from keychain")
-            }
-        }
-        let rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("rootViewController") as? WalkthroughViewController
-        self.presentViewController(rootViewController!, animated: true, completion: nil)
-//        self.view.window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     @IBAction func searchMode(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
